@@ -6,11 +6,25 @@ import { Countdown } from "@/components/wedding/Countdown";
 import { RsvpForm } from "@/components/wedding/RsvpForm";
 import { Guestbook } from "@/components/wedding/Guestbook";
 import { DigitalEnvelope } from "@/components/wedding/DigitalEnvelope";
-import floralBorder from "@/assets/floral-border.png";
-import coupleHero from "@/assets/couple-hero.jpg";
-import bgTexture from "@/assets/bg-texture.jpg";
+import { GalleryLightbox } from "@/components/wedding/GalleryLightbox";
+import floralBorder from "@/assets/bg-floral-blue.jpeg";
+import coupleHero from "@/assets/couple-bg.jpeg";
+import bgTexture from "@/assets/bg-floral-blue.jpeg";
+import randiPhoto from "@/assets/randi.jpg";
+import helfiPhoto from "@/assets/helfi.jpeg";
+import g1 from "@/assets/gallery-1.jpeg";
+import g2 from "@/assets/gallery-2.jpeg";
+import g3 from "@/assets/gallery-3.jpeg";
+import g4 from "@/assets/gallery-4.jpeg";
 
-const WEDDING_DATE = new Date("2026-08-15T10:00:00+07:00");
+const WEDDING_DATE = new Date("2026-08-14T10:00:00+07:00");
+const GALLERY = [
+  { src: g1, alt: "Momen 1" },
+  { src: g2, alt: "Momen 2" },
+  { src: g3, alt: "Momen 3" },
+  { src: g4, alt: "Momen 4" },
+  { src: coupleHero, alt: "Momen 5" },
+];
 
 const Index = () => {
   const [params] = useSearchParams();
@@ -56,7 +70,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen relative" style={{ backgroundImage: `url(${bgTexture})`, backgroundSize: "cover", backgroundAttachment: "fixed" }}>
-      <audio id="bg-music" loop src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_1718e49cf3.mp3?filename=relaxing-145038.mp3" />
+      <audio id="bg-music" loop src="/wedding-music.mp3" preload="auto" />
 
       <button onClick={toggleMusic} className="fixed bottom-5 right-5 z-50 bg-gold text-primary-foreground rounded-full w-12 h-12 flex items-center justify-center shadow-elegant hover:scale-110 transition-transform">
         {musicOn ? <Music2 className="w-5 h-5 animate-shimmer" /> : <Music className="w-5 h-5" />}
@@ -76,7 +90,7 @@ const Index = () => {
           <p className="font-serif-display text-3xl text-gold my-2">&</p>
           <h1 className="font-script text-7xl md:text-9xl text-primary leading-none">Helfi</h1>
           <div className="w-24 h-px bg-gold mx-auto my-8" />
-          <p className="font-serif-display text-xl md:text-2xl text-primary">Sabtu, 15 Agustus 2026</p>
+          <p className="font-serif-display text-xl md:text-2xl text-primary">Jum'at, 14 Agustus 2026</p>
         </div>
         <img src={floralBorder} alt="" className="absolute bottom-0 left-0 w-full pointer-events-none opacity-80 rotate-180 z-10" />
       </section>
@@ -97,12 +111,12 @@ const Index = () => {
         </div>
         <div className="grid md:grid-cols-2 gap-10">
           {[
-            { name: "Helfi Angeliana", role: "Putri dari", parents: "Bpk. Ahmad & Ibu Siti", side: "The Bride" },
-            { name: "Randi Saputra", role: "Putra dari", parents: "Bpk. Hasan & Ibu Aminah", side: "The Groom" },
+            { name: "Randi Saputra", role: "Putra dari", parents: "Bpk. Lukman & Ibu Amrina", side: "The Groom", photo: randiPhoto },
+            { name: "Helfiana Anggraini", role: "Putri dari", parents: "Bpk. Heri Sukandi & Ibu Nengsi Harni", side: "The Bride", photo: helfiPhoto },
           ].map((p) => (
             <div key={p.name} className="bg-card/80 backdrop-blur border border-gold/30 rounded-2xl p-8 text-center shadow-elegant">
               <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-gold/40 animate-float-slow">
-                <img src={coupleHero} alt={p.name} className="w-full h-full object-cover" loading="lazy" />
+                <img src={p.photo} alt={p.name} className="w-full h-full object-cover" loading="lazy" />
               </div>
               <p className="text-xs uppercase tracking-widest text-gold">{p.side}</p>
               <h3 className="font-script text-4xl text-primary mt-2">{p.name}</h3>
@@ -128,8 +142,8 @@ const Index = () => {
         </div>
         <div className="grid md:grid-cols-2 gap-6">
           {[
-            { title: "Akad Nikah", time: "10:00 - 12:00 WIB", date: "Sabtu, 15 Agustus 2026" },
-            { title: "Resepsi", time: "13:00 - 16:00 WIB", date: "Sabtu, 15 Agustus 2026" },
+            { title: "Akad Nikah", time: "10:00 WIB - Selesai", date: "Jum'at, 14 Agustus 2026" },
+            { title: "Resepsi", time: "13:00 - 16:00 WIB", date: "Jum'at, 14 Agustus 2026" },
           ].map((e) => (
             <div key={e.title} className="bg-card/80 backdrop-blur border border-gold/30 rounded-2xl p-8 text-center shadow-soft">
               <Calendar className="w-8 h-8 text-gold mx-auto mb-3" />
@@ -143,9 +157,9 @@ const Index = () => {
         <div className="mt-8 bg-card/80 backdrop-blur border border-gold/30 rounded-2xl p-8 text-center shadow-soft">
           <MapPin className="w-8 h-8 text-gold mx-auto mb-3" />
           <h3 className="font-serif-display text-2xl text-primary">Lokasi</h3>
-          <p className="text-muted-foreground mt-2">Gedung Serbaguna Anggrek<br/>Jl. Melati No. 123, Jakarta Selatan</p>
+          <p className="text-muted-foreground mt-2">JG7Q+94J, Pasie Laweh,<br/>Kec. Sungai Tarab, Kabupaten Tanah Datar,<br/>Sumatera Barat 27261</p>
           <Button asChild className="mt-5 bg-gold hover:bg-gold/90 text-primary-foreground rounded-full">
-            <a href="https://maps.google.com/?q=Jakarta+Selatan" target="_blank" rel="noreferrer">
+            <a href="https://maps.app.goo.gl/Xj2pKcrrg4GMJg1H6" target="_blank" rel="noreferrer">
               <MapPin className="w-4 h-4 mr-2" /> Lihat Lokasi
             </a>
           </Button>
@@ -158,13 +172,7 @@ const Index = () => {
           <p className="text-sm uppercase tracking-[0.3em] text-gold mb-2">Our Moments</p>
           <h2 className="font-serif-display text-4xl text-primary">Galeri</h2>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-          {Array.from({ length: 6 }).map((_, i) => (
-            <div key={i} className="aspect-square overflow-hidden rounded-xl shadow-soft group">
-              <img src={coupleHero} alt={`Moment ${i + 1}`} loading="lazy" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-            </div>
-          ))}
-        </div>
+        <GalleryLightbox images={GALLERY} />
       </section>
 
       {/* RSVP & GUESTBOOK */}
