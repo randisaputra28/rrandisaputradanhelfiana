@@ -54,8 +54,8 @@ const Index = () => {
     return (
       <div className="min-h-screen relative flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0" style={{ backgroundImage: `url(${bgTexture})`, backgroundSize: "cover", backgroundPosition: "center" }} />
-        <img src={coupleOverlay} alt="" className="absolute inset-0 w-full h-full object-cover opacity-25 mix-blend-multiply pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-transparent to-background/40" />
+        <img src={coupleOverlay} alt="" className="absolute inset-0 w-full h-full object-cover opacity-60 pointer-events-none" />
+        <div className="absolute inset-0 bg-background/40" />
         <div className="relative z-10 text-center px-6 max-w-md animate-fade-up">
           <p className="text-sm uppercase tracking-[0.4em] text-gold mb-3">The Wedding of</p>
           <h1 className="font-script text-6xl md:text-7xl text-primary mb-2">Randi & Helfi</h1>
@@ -73,7 +73,8 @@ const Index = () => {
   return (
     <div className="min-h-screen relative">
       <div className="fixed inset-0 -z-10" style={{ backgroundImage: `url(${bgTexture})`, backgroundSize: "cover", backgroundPosition: "center" }} />
-      <img src={coupleOverlay} alt="" className="fixed inset-0 -z-10 w-full h-full object-cover opacity-15 mix-blend-multiply pointer-events-none" />
+      <img src={coupleOverlay} alt="" className="fixed inset-0 -z-10 w-full h-full object-cover opacity-35 pointer-events-none" />
+      <div className="fixed inset-0 -z-10 bg-background/30 pointer-events-none" />
       <audio id="bg-music" loop src="/wedding-music.mp3" preload="auto" />
 
       <button onClick={toggleMusic} className="fixed bottom-5 right-5 z-50 bg-gold text-primary-foreground rounded-full w-12 h-12 flex items-center justify-center shadow-elegant hover:scale-110 transition-transform">
