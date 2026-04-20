@@ -15,22 +15,22 @@
     --popover: 36 40% 98%;
     --popover-foreground: 25 30% 18%;
 
-    --primary: 28 35% 30%;
+    --primary: 25 45% 18%;
     --primary-foreground: 36 40% 98%;
 
     --secondary: 30 25% 88%;
     --secondary-foreground: 25 30% 18%;
 
     --muted: 32 20% 90%;
-    --muted-foreground: 25 15% 40%;
+    --muted-foreground: 25 25% 28%;
 
-    --accent: 38 60% 55%;
+    --accent: 38 70% 42%;
     --accent-foreground: 36 40% 98%;
 
-    --gold: 38 65% 52%;
-    --gold-light: 42 70% 75%;
-    --rose: 350 50% 75%;
-    --sage: 90 15% 55%;
+    --gold: 38 80% 38%;
+    --gold-light: 42 70% 70%;
+    --rose: 350 60% 55%;
+    --sage: 90 25% 35%;
 
     --destructive: 0 70% 50%;
     --destructive-foreground: 36 40% 98%;
