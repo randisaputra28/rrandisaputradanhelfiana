@@ -6,11 +6,25 @@ import { Countdown } from "@/components/wedding/Countdown";
 import { RsvpForm } from "@/components/wedding/RsvpForm";
 import { Guestbook } from "@/components/wedding/Guestbook";
 import { DigitalEnvelope } from "@/components/wedding/DigitalEnvelope";
-import floralBorder from "@/assets/floral-border.png";
-import coupleHero from "@/assets/couple-hero.jpg";
-import bgTexture from "@/assets/bg-texture.jpg";
+import { GalleryLightbox } from "@/components/wedding/GalleryLightbox";
+import floralBorder from "@/assets/bg-floral-blue.jpeg";
+import coupleHero from "@/assets/couple-bg.jpeg";
+import bgTexture from "@/assets/bg-floral-blue.jpeg";
+import randiPhoto from "@/assets/randi.jpg";
+import helfiPhoto from "@/assets/helfi.jpeg";
+import g1 from "@/assets/gallery-1.jpeg";
+import g2 from "@/assets/gallery-2.jpeg";
+import g3 from "@/assets/gallery-3.jpeg";
+import g4 from "@/assets/gallery-4.jpeg";
 
-const WEDDING_DATE = new Date("2026-08-15T10:00:00+07:00");
+const WEDDING_DATE = new Date("2026-08-14T10:00:00+07:00");
+const GALLERY = [
+  { src: g1, alt: "Momen 1" },
+  { src: g2, alt: "Momen 2" },
+  { src: g3, alt: "Momen 3" },
+  { src: g4, alt: "Momen 4" },
+  { src: coupleHero, alt: "Momen 5" },
+];
 
 const Index = () => {
   const [params] = useSearchParams();
