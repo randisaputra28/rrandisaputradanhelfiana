@@ -7,9 +7,10 @@ import { RsvpForm } from "@/components/wedding/RsvpForm";
 import { Guestbook } from "@/components/wedding/Guestbook";
 import { DigitalEnvelope } from "@/components/wedding/DigitalEnvelope";
 import { GalleryLightbox } from "@/components/wedding/GalleryLightbox";
-import floralBorder from "@/assets/bg-floral-blue.jpeg";
-import coupleHero from "@/assets/couple-bg.jpeg";
-import bgTexture from "@/assets/bg-floral-blue.jpeg";
+import floralBorder from "@/assets/bg-floral-green.jpeg";
+import coupleHero from "@/assets/couple-overlay.jpeg";
+import bgTexture from "@/assets/bg-floral-green.jpeg";
+import coupleOverlay from "@/assets/couple-overlay.jpeg";
 import randiPhoto from "@/assets/randi.jpg";
 import helfiPhoto from "@/assets/helfi.jpeg";
 import g1 from "@/assets/gallery-1.jpeg";
@@ -51,9 +52,10 @@ const Index = () => {
 
   if (!opened) {
     return (
-      <div className="min-h-screen relative flex items-center justify-center overflow-hidden" style={{ backgroundImage: `url(${bgTexture})`, backgroundSize: "cover" }}>
-        <img src={floralBorder} alt="" className="absolute top-0 left-0 w-full pointer-events-none opacity-90" />
-        <img src={floralBorder} alt="" className="absolute bottom-0 left-0 w-full pointer-events-none opacity-90 rotate-180" />
+      <div className="min-h-screen relative flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0" style={{ backgroundImage: `url(${bgTexture})`, backgroundSize: "cover", backgroundPosition: "center" }} />
+        <img src={coupleOverlay} alt="" className="absolute inset-0 w-full h-full object-cover opacity-25 mix-blend-multiply pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-transparent to-background/40" />
         <div className="relative z-10 text-center px-6 max-w-md animate-fade-up">
           <p className="text-sm uppercase tracking-[0.4em] text-gold mb-3">The Wedding of</p>
           <h1 className="font-script text-6xl md:text-7xl text-primary mb-2">Randi & Helfi</h1>
@@ -69,7 +71,9 @@ const Index = () => {
   }
 
   return (
-    <div className="min-h-screen relative" style={{ backgroundImage: `url(${bgTexture})`, backgroundSize: "cover", backgroundAttachment: "fixed" }}>
+    <div className="min-h-screen relative">
+      <div className="fixed inset-0 -z-10" style={{ backgroundImage: `url(${bgTexture})`, backgroundSize: "cover", backgroundPosition: "center" }} />
+      <img src={coupleOverlay} alt="" className="fixed inset-0 -z-10 w-full h-full object-cover opacity-15 mix-blend-multiply pointer-events-none" />
       <audio id="bg-music" loop src="/wedding-music.mp3" preload="auto" />
 
       <button onClick={toggleMusic} className="fixed bottom-5 right-5 z-50 bg-gold text-primary-foreground rounded-full w-12 h-12 flex items-center justify-center shadow-elegant hover:scale-110 transition-transform">
@@ -159,7 +163,7 @@ const Index = () => {
           <h3 className="font-serif-display text-2xl text-primary">Lokasi</h3>
           <p className="text-muted-foreground mt-2">JG7Q+94J, Pasie Laweh,<br/>Kec. Sungai Tarab, Kabupaten Tanah Datar,<br/>Sumatera Barat 27261</p>
           <Button asChild className="mt-5 bg-gold hover:bg-gold/90 text-primary-foreground rounded-full">
-            <a href="https://maps.app.goo.gl/Xj2pKcrrg4GMJg1H6" target="_blank" rel="noreferrer">
+            <a href="https://maps.app.goo.gl/F3jEsuCrH6HGruDZA" target="_blank" rel="noreferrer">
               <MapPin className="w-4 h-4 mr-2" /> Lihat Lokasi
             </a>
           </Button>
