@@ -93,7 +93,7 @@ const Index = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/30 to-background" />
         </div>
         <div className="relative z-20 text-center w-full max-w-md mx-auto animate-fade-up">
-          <p className="text-[11px] sm:text-sm uppercase tracking-[0.4em] sm:tracking-[0.5em] text-gold mb-3 sm:mb-4 break-words">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
+          <p lang="ar" dir="rtl" className="font-arabic text-2xl sm:text-3xl md:text-4xl text-gold mb-4 sm:mb-5 leading-loose drop-shadow-sm" style={{ textShadow: "0 1px 2px hsl(var(--background) / 0.6)" }}>بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
           <p className="text-[10px] sm:text-xs uppercase tracking-[0.3em] sm:tracking-[0.4em] text-muted-foreground mb-2">The Wedding of</p>
           <h1 className="font-script text-6xl sm:text-7xl md:text-9xl text-primary leading-none">Randi</h1>
           <p className="font-serif-display text-2xl sm:text-3xl text-gold my-1 sm:my-2">&</p>
