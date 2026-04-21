@@ -32,9 +32,6 @@ export const RsvpForm = ({ defaultName = "" }: { defaultName?: string }) => {
       guest_count: count,
       message: message.trim() || null,
     });
-    if (message.trim()) {
-      await supabase.from("guestbook").insert({ name: name.trim(), message: message.trim() });
-    }
     setLoading(false);
     if (error) return toast.error("Gagal mengirim RSVP");
     toast.success("Terima kasih! Konfirmasi kehadiran Anda telah terkirim.");
