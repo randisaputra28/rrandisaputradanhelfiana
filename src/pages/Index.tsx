@@ -7,6 +7,8 @@ import { RsvpForm } from "@/components/wedding/RsvpForm";
 import { Guestbook } from "@/components/wedding/Guestbook";
 import { DigitalEnvelope } from "@/components/wedding/DigitalEnvelope";
 import { GalleryLightbox } from "@/components/wedding/GalleryLightbox";
+import { BottomNav } from "@/components/wedding/BottomNav";
+import { SparkleEffect } from "@/components/wedding/SparkleEffect";
 import floralBorder from "@/assets/bg-floral-green.jpeg";
 import coupleHero from "@/assets/couple-overlay.jpeg";
 import bgTexture from "@/assets/bg-floral-green.jpeg";
@@ -71,31 +73,33 @@ const Index = () => {
   }
 
   return (
-    <div className="min-h-screen relative">
+    <div className="min-h-screen relative pb-24">
+      <SparkleEffect />
+      <BottomNav />
       <div className="fixed inset-0 -z-10" style={{ backgroundImage: `url(${bgTexture})`, backgroundSize: "cover", backgroundPosition: "center" }} />
       <img src={coupleOverlay} alt="" className="fixed inset-0 -z-10 w-full h-full object-cover opacity-35 pointer-events-none" />
       <div className="fixed inset-0 -z-10 bg-background/30 pointer-events-none" />
       <audio id="bg-music" loop src="/wedding-music.mp3" preload="auto" />
 
-      <button onClick={toggleMusic} className="fixed bottom-5 right-5 z-50 bg-gold text-primary-foreground rounded-full w-12 h-12 flex items-center justify-center shadow-elegant hover:scale-110 transition-transform">
+      <button onClick={toggleMusic} className="fixed bottom-20 right-4 z-50 bg-gold text-primary-foreground rounded-full w-11 h-11 flex items-center justify-center shadow-elegant hover:scale-110 transition-transform">
         {musicOn ? <Music2 className="w-5 h-5 animate-shimmer" /> : <Music className="w-5 h-5" />}
       </button>
 
       {/* HERO */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden px-4">
         <img src={floralBorder} alt="" className="absolute top-0 left-0 w-full pointer-events-none opacity-80 z-10" />
         <div className="absolute inset-0">
           <img src={coupleHero} alt="Randi dan Helfi" className="w-full h-full object-cover opacity-40" />
           <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/30 to-background" />
         </div>
-        <div className="relative z-20 text-center px-6 animate-fade-up">
-          <p className="text-sm uppercase tracking-[0.5em] text-gold mb-4">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
-          <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground mb-2">The Wedding of</p>
-          <h1 className="font-script text-7xl md:text-9xl text-primary leading-none">Randi</h1>
-          <p className="font-serif-display text-3xl text-gold my-2">&</p>
-          <h1 className="font-script text-7xl md:text-9xl text-primary leading-none">Helfi</h1>
-          <div className="w-24 h-px bg-gold mx-auto my-8" />
-          <p className="font-serif-display text-xl md:text-2xl text-primary">Jum'at, 14 Agustus 2026</p>
+        <div className="relative z-20 text-center w-full max-w-md mx-auto animate-fade-up">
+          <p className="text-[11px] sm:text-sm uppercase tracking-[0.4em] sm:tracking-[0.5em] text-gold mb-3 sm:mb-4 break-words">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
+          <p className="text-[10px] sm:text-xs uppercase tracking-[0.3em] sm:tracking-[0.4em] text-muted-foreground mb-2">The Wedding of</p>
+          <h1 className="font-script text-6xl sm:text-7xl md:text-9xl text-primary leading-none">Randi</h1>
+          <p className="font-serif-display text-2xl sm:text-3xl text-gold my-1 sm:my-2">&</p>
+          <h1 className="font-script text-6xl sm:text-7xl md:text-9xl text-primary leading-none">Helfi</h1>
+          <div className="w-20 sm:w-24 h-px bg-gold mx-auto my-6 sm:my-8" />
+          <p className="font-serif-display text-lg sm:text-xl md:text-2xl text-primary">Jum'at, 14 Agustus 2026</p>
         </div>
         <img src={floralBorder} alt="" className="absolute bottom-0 left-0 w-full pointer-events-none opacity-80 rotate-180 z-10" />
       </section>
@@ -109,7 +113,7 @@ const Index = () => {
       </section>
 
       {/* COUPLE */}
-      <section className="py-16 px-6 max-w-4xl mx-auto">
+      <section id="couple" className="py-16 px-6 max-w-4xl mx-auto scroll-mt-16">
         <div className="text-center mb-12">
           <p className="text-sm uppercase tracking-[0.3em] text-gold mb-2">The Bride & Groom</p>
           <h2 className="font-serif-display text-4xl text-primary">Mempelai Kami</h2>
@@ -140,7 +144,7 @@ const Index = () => {
       </section>
 
       {/* EVENT */}
-      <section className="py-16 px-6 max-w-4xl mx-auto">
+      <section id="event" className="py-16 px-6 max-w-4xl mx-auto scroll-mt-16">
         <div className="text-center mb-10">
           <p className="text-sm uppercase tracking-[0.3em] text-gold mb-2">Save The Date</p>
           <h2 className="font-serif-display text-4xl text-primary">Acara Pernikahan</h2>
@@ -172,7 +176,7 @@ const Index = () => {
       </section>
 
       {/* GALLERY */}
-      <section className="py-16 px-6 max-w-5xl mx-auto">
+      <section id="gallery" className="py-16 px-6 max-w-5xl mx-auto scroll-mt-16">
         <div className="text-center mb-10">
           <p className="text-sm uppercase tracking-[0.3em] text-gold mb-2">Our Moments</p>
           <h2 className="font-serif-display text-4xl text-primary">Galeri</h2>
@@ -181,7 +185,7 @@ const Index = () => {
       </section>
 
       {/* RSVP & GUESTBOOK */}
-      <section className="py-16 px-6 max-w-5xl mx-auto">
+      <section id="rsvp" className="py-16 px-6 max-w-5xl mx-auto scroll-mt-16">
         <div className="text-center mb-10">
           <p className="text-sm uppercase tracking-[0.3em] text-gold mb-2">RSVP</p>
           <h2 className="font-serif-display text-4xl text-primary">Konfirmasi Kehadiran</h2>
@@ -196,7 +200,7 @@ const Index = () => {
       </section>
 
       {/* GIFT */}
-      <section className="py-16 px-6 text-center max-w-2xl mx-auto">
+      <section id="gift" className="py-16 px-6 text-center max-w-2xl mx-auto scroll-mt-16">
         <p className="text-sm uppercase tracking-[0.3em] text-gold mb-2">Wedding Gift</p>
         <h2 className="font-serif-display text-4xl text-primary mb-4">Tanda Kasih</h2>
         <p className="text-muted-foreground mb-6">
