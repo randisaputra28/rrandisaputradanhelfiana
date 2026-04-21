@@ -17,13 +17,14 @@ export const Guestbook = () => {
       if (data) setEntries(data);
     };
     load();
+    const interval = setInterval(load, 3000);
     const channel = supabase
       .channel("guestbook-changes")
       .on("postgres_changes", { event: "INSERT", schema: "public", table: "guestbook" }, (payload) => {
         setEntries((prev) => [payload.new as Entry, ...prev]);
       })
       .subscribe();
-    return () => { supabase.removeChannel(channel); };
+    return () => { clearInterval(interval); supabase.removeChannel(channel); };
   }, []);
 
   if (!entries.length) {
