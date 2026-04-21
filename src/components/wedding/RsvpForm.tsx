@@ -8,11 +8,11 @@ import { toast } from "sonner";
 import { Sparkles } from "lucide-react";
 
 const TEMPLATE_MESSAGES = [
-  "Barakallahu laka wa baraka 'alaika wa jama'a bainakuma fi khair. Semoga menjadi keluarga sakinah, mawaddah, warahmah. Aamiin.",
-  "Selamat menempuh hidup baru! Semoga selalu bahagia, langgeng sampai jannah, dan dikaruniai keturunan yang shaleh & shalehah.",
-  "Selamat berbahagia Randi & Helfi. Semoga pernikahan ini menjadi awal dari kisah indah yang penuh berkah dan cinta sejati.",
-  "Semoga Allah senantiasa memberkahi pernikahan kalian, melimpahkan rahmat, kasih sayang, dan kebahagiaan dunia akhirat.",
-  "Tahniah & selamat menempuh bahtera rumah tangga. Jadilah pasangan yang saling melengkapi, menguatkan, dan menyayangi sepanjang masa.",
+  { label: "Barakallahu laka...", text: "Barakallahu laka wa baraka 'alaika wa jama'a bainakuma fi khair. Semoga menjadi keluarga sakinah, mawaddah, warahmah. Aamiin." },
+  { label: "Selamat menempuh hidup baru...", text: "Selamat menempuh hidup baru! Semoga selalu bahagia, langgeng sampai jannah, dan dikaruniai keturunan yang shaleh & shalehah." },
+  { label: "Selamat berbahagia...", text: "Selamat berbahagia Randi & Helfi. Semoga pernikahan ini menjadi awal dari kisah indah yang penuh berkah dan cinta sejati." },
+  { label: "Semoga Allah memberkahi...", text: "Semoga Allah senantiasa memberkahi pernikahan kalian, melimpahkan rahmat, kasih sayang, dan kebahagiaan dunia akhirat." },
+  { label: "Tahniah & selamat...", text: "Tahniah & selamat menempuh bahtera rumah tangga. Jadilah pasangan yang saling melengkapi, menguatkan, dan menyayangi sepanjang masa." },
 ];
 
 export const RsvpForm = ({ defaultName = "" }: { defaultName?: string }) => {
@@ -89,10 +89,10 @@ export const RsvpForm = ({ defaultName = "" }: { defaultName?: string }) => {
               <button
                 key={i}
                 type="button"
-                onClick={() => setMessage(m)}
+                onClick={() => setMessage(m.text)}
                 className="text-[11px] px-2.5 py-1 rounded-full border border-gold/40 bg-background hover:bg-gold/10 text-primary transition-colors"
               >
-                Ucapan #{i + 1}
+                {m.label}
               </button>
             ))}
           </div>
