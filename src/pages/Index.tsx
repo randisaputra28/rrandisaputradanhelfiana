@@ -20,7 +20,7 @@ import g2 from "@/assets/gallery-2.jpeg";
 import g3 from "@/assets/gallery-3.jpeg";
 import g4 from "@/assets/gallery-4.jpeg";
 
-const WEDDING_DATE = new Date("2026-08-14T10:00:00+07:00");
+const WEDDING_DATE = new Date("2026-08-21T10:00:00+07:00");
 const GALLERY = [
   { src: g1, alt: "Momen 1" },
   { src: g2, alt: "Momen 2" },
