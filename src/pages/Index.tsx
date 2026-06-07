@@ -151,8 +151,8 @@ const Index = () => {
         </div>
         <div className="grid md:grid-cols-2 gap-6">
           {[
-            { title: "Akad Nikah", time: "10:00 WIB - Selesai", date: "Jum'at, 14 Agustus 2026" },
-            { title: "Resepsi", time: "13:00 - 16:00 WIB", date: "Jum'at, 14 Agustus 2026" },
+            { title: "Akad Nikah", time: "10:00 WIB - Selesai", date: "Jum'at, 21 Agustus 2026" },
+            { title: "Resepsi", time: "13:00 - 16:00 WIB", date: "Sabtu, 22 Agustus 2026" },
           ].map((e) => (
             <div key={e.title} className="bg-card/80 backdrop-blur border border-gold/30 rounded-2xl p-8 text-center shadow-soft">
               <Calendar className="w-8 h-8 text-gold mx-auto mb-3" />
