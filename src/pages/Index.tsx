@@ -73,7 +73,7 @@ const Index = () => {
   }
 
   return (
-    <div className="min-h-screen relative pb-24">
+    <div className="min-h-screen relative pb-32 sm:pb-28">
       <SparkleEffect />
       <BottomNav />
       <div className="fixed inset-0 -z-10" style={{ backgroundImage: `url(${bgTexture})`, backgroundSize: "cover", backgroundPosition: "center" }} />
