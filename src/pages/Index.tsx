@@ -20,7 +20,7 @@ import g2 from "@/assets/gallery-2.jpeg";
 import g3 from "@/assets/gallery-3.jpeg";
 import g4 from "@/assets/gallery-4.jpeg";
 
-const WEDDING_DATE = new Date("2026-08-14T10:00:00+07:00");
+const WEDDING_DATE = new Date("2026-08-21T10:00:00+07:00");
 const GALLERY = [
   { src: g1, alt: "Momen 1" },
   { src: g2, alt: "Momen 2" },
@@ -99,7 +99,7 @@ const Index = () => {
           <p className="font-serif-display text-2xl sm:text-3xl text-gold my-1 sm:my-2">&</p>
           <h1 className="font-script text-6xl sm:text-7xl md:text-9xl text-primary leading-none">Helfi</h1>
           <div className="w-20 sm:w-24 h-px bg-gold mx-auto my-6 sm:my-8" />
-          <p className="font-serif-display text-lg sm:text-xl md:text-2xl text-primary">Jum'at, 14 Agustus 2026</p>
+          <p className="font-serif-display text-lg sm:text-xl md:text-2xl text-primary">Jum'at, 21 &middot; Sabtu, 22 Agustus 2026</p>
         </div>
         <img src={floralBorder} alt="" className="absolute bottom-0 left-0 w-full pointer-events-none opacity-80 rotate-180 z-10" />
       </section>
@@ -151,8 +151,8 @@ const Index = () => {
         </div>
         <div className="grid md:grid-cols-2 gap-6">
           {[
-            { title: "Akad Nikah", time: "10:00 WIB - Selesai", date: "Jum'at, 14 Agustus 2026" },
-            { title: "Resepsi", time: "13:00 - 16:00 WIB", date: "Jum'at, 14 Agustus 2026" },
+            { title: "Akad Nikah", time: "10:00 WIB - Selesai", date: "Jum'at, 21 Agustus 2026" },
+            { title: "Resepsi", time: "13:00 - 16:00 WIB", date: "Sabtu, 22 Agustus 2026" },
           ].map((e) => (
             <div key={e.title} className="bg-card/80 backdrop-blur border border-gold/30 rounded-2xl p-8 text-center shadow-soft">
               <Calendar className="w-8 h-8 text-gold mx-auto mb-3" />
