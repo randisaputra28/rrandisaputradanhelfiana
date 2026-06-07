@@ -99,7 +99,7 @@ const Index = () => {
           <p className="font-serif-display text-2xl sm:text-3xl text-gold my-1 sm:my-2">&</p>
           <h1 className="font-script text-6xl sm:text-7xl md:text-9xl text-primary leading-none">Helfi</h1>
           <div className="w-20 sm:w-24 h-px bg-gold mx-auto my-6 sm:my-8" />
-          <p className="font-serif-display text-lg sm:text-xl md:text-2xl text-primary">Jum'at, 14 Agustus 2026</p>
+          <p className="font-serif-display text-lg sm:text-xl md:text-2xl text-primary">Jum'at, 21 &middot; Sabtu, 22 Agustus 2026</p>
         </div>
         <img src={floralBorder} alt="" className="absolute bottom-0 left-0 w-full pointer-events-none opacity-80 rotate-180 z-10" />
       </section>
