@@ -9,6 +9,7 @@ import { DigitalEnvelope } from "@/components/wedding/DigitalEnvelope";
 import { GalleryLightbox } from "@/components/wedding/GalleryLightbox";
 import { BottomNav } from "@/components/wedding/BottomNav";
 import { SparkleEffect } from "@/components/wedding/SparkleEffect";
+import { SakuraPetals } from "@/components/wedding/SakuraPetals";
 import floralBorder from "@/assets/bg-floral-green.jpeg";
 import coupleHero from "@/assets/couple-overlay.jpeg";
 import bgTexture from "@/assets/bg-floral-green.jpeg";
@@ -21,8 +22,10 @@ import g3 from "@/assets/gallery-3.jpeg";
 import g4 from "@/assets/gallery-4.jpeg";
 
 import bgRings from "@/assets/bg-rings.png";
-import bgVenue from "@/assets/bg-venue.png";
+import bgVenue from "@/assets/bg-rumah-gadang.png";
 import bgMinangMap from "@/assets/bg-minang-map.png";
+import bgMarawa from "@/assets/bg-marawa.png";
+
 
 const WEDDING_DATE = new Date("2026-08-21T08:00:00+07:00");
 const GALLERY = [
