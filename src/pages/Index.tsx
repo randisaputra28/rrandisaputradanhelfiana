@@ -20,7 +20,11 @@ import g2 from "@/assets/gallery-2.jpeg";
 import g3 from "@/assets/gallery-3.jpeg";
 import g4 from "@/assets/gallery-4.jpeg";
 
-const WEDDING_DATE = new Date("2026-08-21T10:00:00+07:00");
+import bgRings from "@/assets/bg-rings.png";
+import bgVenue from "@/assets/bg-venue.png";
+import bgMinangMap from "@/assets/bg-minang-map.png";
+
+const WEDDING_DATE = new Date("2026-08-21T08:00:00+07:00");
 const GALLERY = [
   { src: g1, alt: "Momen 1" },
   { src: g2, alt: "Momen 2" },
@@ -120,10 +124,10 @@ const Index = () => {
         </div>
         <div className="grid md:grid-cols-2 gap-10">
           {[
-            { name: "Randi Saputra", role: "Putra dari", parents: "Bpk. Lukman & Ibu Amrina", side: "The Groom", photo: randiPhoto },
-            { name: "Helfiana Anggraini", role: "Putri dari", parents: "Bpk. Heri Sukandi & Ibu Nengsi Harni", side: "The Bride", photo: helfiPhoto },
+            { name: "Randi Saputra", role: "Putra ke-2 dari", parents: "Bapak dan Ibu", side: "The Groom", photo: randiPhoto },
+            { name: "Helfiana", role: "Putri ke-2 dari", parents: "Bapak dan Ibu", side: "The Bride", photo: helfiPhoto },
           ].map((p) => (
-            <div key={p.name} className="bg-card/80 backdrop-blur border border-gold/30 rounded-2xl p-8 text-center shadow-elegant">
+            <div key={p.name} className="bg-card/80 backdrop-blur border border-gold/30 rounded-2xl p-8 text-center shadow-elegant animate-fade-up">
               <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-gold/40 animate-float-slow">
                 <img src={p.photo} alt={p.name} className="w-full h-full object-cover" loading="lazy" />
               </div>
@@ -151,27 +155,33 @@ const Index = () => {
         </div>
         <div className="grid md:grid-cols-2 gap-6">
           {[
-            { title: "Akad Nikah", time: "10:00 WIB - Selesai", date: "Jum'at, 21 Agustus 2026" },
-            { title: "Resepsi", time: "13:00 - 16:00 WIB", date: "Sabtu, 22 Agustus 2026" },
+            { title: "Akad Nikah", time: "08:00 WIB - Selesai", date: "Jum'at, 21 Agustus 2026", bg: bgRings, opacity: 0.13 },
+            { title: "Resepsi", time: "10:00 WIB - Selesai", date: "Sabtu, 22 Agustus 2026", bg: bgVenue, opacity: 0.10 },
           ].map((e) => (
-            <div key={e.title} className="bg-card/80 backdrop-blur border border-gold/30 rounded-2xl p-8 text-center shadow-soft">
-              <Calendar className="w-8 h-8 text-gold mx-auto mb-3" />
-              <h3 className="font-serif-display text-3xl text-primary">{e.title}</h3>
-              <div className="w-12 h-px bg-gold mx-auto my-4" />
-              <p className="text-primary font-medium">{e.date}</p>
-              <p className="text-muted-foreground text-sm mt-1">{e.time}</p>
+            <div key={e.title} className="relative overflow-hidden bg-card/80 backdrop-blur border border-gold/30 rounded-2xl p-8 text-center shadow-soft animate-fade-up">
+              <img src={e.bg} alt="" aria-hidden loading="lazy" className="pointer-events-none absolute inset-0 m-auto w-[78%] h-[78%] object-contain" style={{ opacity: e.opacity }} />
+              <div className="relative z-10">
+                <Calendar className="w-8 h-8 text-gold mx-auto mb-3" />
+                <h3 className="font-serif-display text-3xl text-primary">{e.title}</h3>
+                <div className="w-12 h-px bg-gold mx-auto my-4" />
+                <p className="text-primary font-medium">{e.date}</p>
+                <p className="text-muted-foreground text-sm mt-1">{e.time}</p>
+              </div>
             </div>
           ))}
         </div>
-        <div className="mt-8 bg-card/80 backdrop-blur border border-gold/30 rounded-2xl p-8 text-center shadow-soft">
-          <MapPin className="w-8 h-8 text-gold mx-auto mb-3" />
-          <h3 className="font-serif-display text-2xl text-primary">Lokasi</h3>
-          <p className="text-muted-foreground mt-2">JG7Q+94J, Pasie Laweh,<br/>Kec. Sungai Tarab, Kabupaten Tanah Datar,<br/>Sumatera Barat 27261</p>
-          <Button asChild className="mt-5 bg-gold hover:bg-gold/90 text-primary-foreground rounded-full">
-            <a href="https://maps.app.goo.gl/F3jEsuCrH6HGruDZA" target="_blank" rel="noreferrer">
-              <MapPin className="w-4 h-4 mr-2" /> Lihat Lokasi
-            </a>
-          </Button>
+        <div className="relative overflow-hidden mt-8 bg-card/80 backdrop-blur border border-gold/30 rounded-2xl p-8 text-center shadow-soft animate-fade-up">
+          <img src={bgMinangMap} alt="" aria-hidden loading="lazy" className="pointer-events-none absolute inset-0 m-auto w-[85%] h-[85%] object-contain" style={{ opacity: 0.10 }} />
+          <div className="relative z-10">
+            <MapPin className="w-8 h-8 text-gold mx-auto mb-3" />
+            <h3 className="font-serif-display text-2xl text-primary">Lokasi</h3>
+            <p className="text-muted-foreground mt-2">JG7Q+94J, Pasie Laweh,<br/>Kec. Sungai Tarab, Kabupaten Tanah Datar,<br/>Sumatera Barat 27261</p>
+            <Button asChild className="mt-5 bg-gold hover:bg-gold/90 text-primary-foreground rounded-full">
+              <a href="https://maps.app.goo.gl/F3jEsuCrH6HGruDZA" target="_blank" rel="noreferrer">
+                <MapPin className="w-4 h-4 mr-2" /> Lihat Lokasi
+              </a>
+            </Button>
+          </div>
         </div>
       </section>
 
