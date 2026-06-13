@@ -1,8 +1,8 @@
-import { Heart, Rose, Diamond, Users } from "lucide-react";
+import { Heart, Flower2, Gem, Users } from "lucide-react";
 
 const ITEMS = [
   {
-    icon: Rose,
+    icon: Flower2,
     emoji: "🌹",
     title: "Awal Pertemuan",
     date: "28 Maret 2018",
@@ -16,7 +16,7 @@ const ITEMS = [
     text: "Seiring berjalannya waktu, kami saling mengenal lebih dalam, belajar memahami satu sama lain, serta tumbuh bersama melalui berbagai suka dan duka. Setiap langkah yang kami lalui semakin menguatkan keyakinan bahwa kami adalah bagian dari perjalanan hidup masing-masing.",
   },
   {
-    icon: Diamond,
+    icon: Gem,
     emoji: "💍",
     title: "Menuju Ikatan Suci",
     date: "2026",
