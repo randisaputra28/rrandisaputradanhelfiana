@@ -9,6 +9,7 @@ import { DigitalEnvelope } from "@/components/wedding/DigitalEnvelope";
 import { GalleryLightbox } from "@/components/wedding/GalleryLightbox";
 import { BottomNav } from "@/components/wedding/BottomNav";
 import { SparkleEffect } from "@/components/wedding/SparkleEffect";
+import { SakuraPetals } from "@/components/wedding/SakuraPetals";
 import floralBorder from "@/assets/bg-floral-green.jpeg";
 import coupleHero from "@/assets/couple-overlay.jpeg";
 import bgTexture from "@/assets/bg-floral-green.jpeg";
@@ -21,8 +22,10 @@ import g3 from "@/assets/gallery-3.jpeg";
 import g4 from "@/assets/gallery-4.jpeg";
 
 import bgRings from "@/assets/bg-rings.png";
-import bgVenue from "@/assets/bg-venue.png";
+import bgVenue from "@/assets/bg-rumah-gadang.png";
 import bgMinangMap from "@/assets/bg-minang-map.png";
+import bgMarawa from "@/assets/bg-marawa.png";
+
 
 const WEDDING_DATE = new Date("2026-08-21T08:00:00+07:00");
 const GALLERY = [
@@ -79,6 +82,8 @@ const Index = () => {
   return (
     <div className="min-h-screen relative pb-32 sm:pb-28">
       <SparkleEffect />
+      <SakuraPetals />
+
       <BottomNav />
       <div className="fixed inset-0 -z-10" style={{ backgroundImage: `url(${bgTexture})`, backgroundSize: "cover", backgroundPosition: "center" }} />
       <img src={coupleOverlay} alt="" className="fixed inset-0 -z-10 w-full h-full object-cover opacity-35 pointer-events-none" />
@@ -124,8 +129,8 @@ const Index = () => {
         </div>
         <div className="grid md:grid-cols-2 gap-10">
           {[
-            { name: "Randi Saputra", role: "Putra ke-2 dari", parents: "Bapak dan Ibu", side: "The Groom", photo: randiPhoto },
-            { name: "Helfiana", role: "Putri ke-2 dari", parents: "Bapak dan Ibu", side: "The Bride", photo: helfiPhoto },
+            { name: "Randi Saputra", role: "Putra ke-2 dari", parents: "Bpk. Lukman & Ibu Amrina", side: "The Groom", photo: randiPhoto },
+            { name: "Helfiana Anggraini", role: "Putri ke-2 dari", parents: "Bpk. Heri Sukandi & Ibu Nengsi Harni", side: "The Bride", photo: helfiPhoto },
           ].map((p) => (
             <div key={p.name} className="bg-card/80 backdrop-blur border border-gold/30 rounded-2xl p-8 text-center shadow-elegant animate-fade-up">
               <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-gold/40 animate-float-slow">
@@ -155,8 +160,8 @@ const Index = () => {
         </div>
         <div className="grid md:grid-cols-2 gap-6">
           {[
-            { title: "Akad Nikah", time: "08:00 WIB - Selesai", date: "Jum'at, 21 Agustus 2026", bg: bgRings, opacity: 0.13 },
-            { title: "Resepsi", time: "10:00 WIB - Selesai", date: "Sabtu, 22 Agustus 2026", bg: bgVenue, opacity: 0.10 },
+            { title: "Akad Nikah", time: "08:00 WIB - Selesai", date: "Jum'at, 21 Agustus 2026", bg: bgRings, opacity: 0.28 },
+            { title: "Resepsi", time: "10:00 WIB - Selesai", date: "Sabtu, 22 Agustus 2026", bg: bgVenue, opacity: 0.28 },
           ].map((e) => (
             <div key={e.title} className="relative overflow-hidden bg-card/80 backdrop-blur border border-gold/30 rounded-2xl p-8 text-center shadow-soft animate-fade-up">
               <img src={e.bg} alt="" aria-hidden loading="lazy" className="pointer-events-none absolute inset-0 m-auto w-[78%] h-[78%] object-contain" style={{ opacity: e.opacity }} />
@@ -171,7 +176,9 @@ const Index = () => {
           ))}
         </div>
         <div className="relative overflow-hidden mt-8 bg-card/80 backdrop-blur border border-gold/30 rounded-2xl p-8 text-center shadow-soft animate-fade-up">
-          <img src={bgMinangMap} alt="" aria-hidden loading="lazy" className="pointer-events-none absolute inset-0 m-auto w-[85%] h-[85%] object-contain" style={{ opacity: 0.10 }} />
+          <img src={bgMarawa} alt="" aria-hidden loading="lazy" className="pointer-events-none absolute inset-y-0 left-0 h-full w-12 sm:w-16 object-cover" style={{ opacity: 0.18 }} />
+          <img src={bgMarawa} alt="" aria-hidden loading="lazy" className="pointer-events-none absolute inset-y-0 right-0 h-full w-12 sm:w-16 object-cover scale-x-[-1]" style={{ opacity: 0.18 }} />
+          <img src={bgMinangMap} alt="" aria-hidden loading="lazy" className="pointer-events-none absolute inset-0 m-auto w-[78%] h-[78%] object-contain" style={{ opacity: 0.22 }} />
           <div className="relative z-10">
             <MapPin className="w-8 h-8 text-gold mx-auto mb-3" />
             <h3 className="font-serif-display text-2xl text-primary">Lokasi</h3>
