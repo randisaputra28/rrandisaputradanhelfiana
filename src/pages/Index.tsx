@@ -176,7 +176,9 @@ const Index = () => {
           ))}
         </div>
         <div className="relative overflow-hidden mt-8 bg-card/80 backdrop-blur border border-gold/30 rounded-2xl p-8 text-center shadow-soft animate-fade-up">
-          <img src={bgMinangMap} alt="" aria-hidden loading="lazy" className="pointer-events-none absolute inset-0 m-auto w-[85%] h-[85%] object-contain" style={{ opacity: 0.10 }} />
+          <img src={bgMarawa} alt="" aria-hidden loading="lazy" className="pointer-events-none absolute inset-y-0 left-0 h-full w-12 sm:w-16 object-cover" style={{ opacity: 0.18 }} />
+          <img src={bgMarawa} alt="" aria-hidden loading="lazy" className="pointer-events-none absolute inset-y-0 right-0 h-full w-12 sm:w-16 object-cover scale-x-[-1]" style={{ opacity: 0.18 }} />
+          <img src={bgMinangMap} alt="" aria-hidden loading="lazy" className="pointer-events-none absolute inset-0 m-auto w-[78%] h-[78%] object-contain" style={{ opacity: 0.22 }} />
           <div className="relative z-10">
             <MapPin className="w-8 h-8 text-gold mx-auto mb-3" />
             <h3 className="font-serif-display text-2xl text-primary">Lokasi</h3>
