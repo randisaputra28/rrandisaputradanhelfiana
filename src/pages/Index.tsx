@@ -160,8 +160,8 @@ const Index = () => {
         </div>
         <div className="grid md:grid-cols-2 gap-6">
           {[
-            { title: "Akad Nikah", time: "08:00 WIB - Selesai", date: "Jum'at, 21 Agustus 2026", bg: bgRings, opacity: 0.13 },
-            { title: "Resepsi", time: "10:00 WIB - Selesai", date: "Sabtu, 22 Agustus 2026", bg: bgVenue, opacity: 0.10 },
+            { title: "Akad Nikah", time: "08:00 WIB - Selesai", date: "Jum'at, 21 Agustus 2026", bg: bgRings, opacity: 0.28 },
+            { title: "Resepsi", time: "10:00 WIB - Selesai", date: "Sabtu, 22 Agustus 2026", bg: bgVenue, opacity: 0.28 },
           ].map((e) => (
             <div key={e.title} className="relative overflow-hidden bg-card/80 backdrop-blur border border-gold/30 rounded-2xl p-8 text-center shadow-soft animate-fade-up">
               <img src={e.bg} alt="" aria-hidden loading="lazy" className="pointer-events-none absolute inset-0 m-auto w-[78%] h-[78%] object-contain" style={{ opacity: e.opacity }} />
