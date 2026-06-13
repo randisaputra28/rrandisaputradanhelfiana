@@ -145,19 +145,20 @@
   }
   .sakura-petal {
     position: absolute;
-    top: -5%;
+    top: -8%;
     display: block;
-    background: radial-gradient(circle at 30% 30%, #ffd1e0 0%, #ff9ec4 55%, #f06aa0 100%);
-    border-radius: 150% 0 150% 0;
-    box-shadow: 0 0 6px rgba(255, 158, 196, 0.6);
-    transform: rotate(var(--rot, 0deg));
     animation: sakura-fall linear infinite;
     will-change: transform, opacity;
   }
+  .sakura-petal > svg { transform: rotate(var(--rot, 0deg)); animation: sakura-spin linear infinite; animation-duration: inherit; }
   @keyframes sakura-fall {
-    0% { transform: translate3d(0, -10vh, 0) rotate(0deg); }
-    50% { transform: translate3d(var(--sway, 30px), 50vh, 0) rotate(180deg); }
-    100% { transform: translate3d(calc(var(--sway, 30px) * -1), 110vh, 0) rotate(360deg); }
+    0% { transform: translate3d(0, -10vh, 0); }
+    50% { transform: translate3d(var(--sway, 30px), 55vh, 0); }
+    100% { transform: translate3d(calc(var(--sway, 30px) * -1), 115vh, 0); }
+  }
+  @keyframes sakura-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
   }
 }
 
