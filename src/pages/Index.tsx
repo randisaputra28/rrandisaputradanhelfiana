@@ -176,17 +176,17 @@ const Index = () => {
             </div>
           ))}
         </div>
-        <div className="relative overflow-hidden mt-8 bg-card/80 backdrop-blur border border-gold/30 rounded-2xl p-8 text-center shadow-soft animate-fade-up">
-          <img src={bgMarawa} alt="" aria-hidden loading="lazy" className="pointer-events-none absolute inset-y-0 left-0 h-full w-12 sm:w-16 object-cover" style={{ opacity: 0.18 }} />
-          <img src={bgMarawa} alt="" aria-hidden loading="lazy" className="pointer-events-none absolute inset-y-0 right-0 h-full w-12 sm:w-16 object-cover scale-x-[-1]" style={{ opacity: 0.18 }} />
-          <img src={bgMinangMap} alt="" aria-hidden loading="lazy" className="pointer-events-none absolute inset-0 m-auto w-[78%] h-[78%] object-contain" style={{ opacity: 0.22 }} />
+        <div className="group relative overflow-hidden mt-8 bg-card/80 backdrop-blur-md border border-gold/30 rounded-2xl p-8 text-center shadow-soft hover:shadow-elegant transition-all duration-300 animate-fade-up">
+          <img src={bgMarawa} alt="" aria-hidden loading="lazy" className="pointer-events-none absolute inset-y-0 left-0 h-full w-10 sm:w-14 object-cover" style={{ opacity: 0.12 }} />
+          <img src={bgMarawa} alt="" aria-hidden loading="lazy" className="pointer-events-none absolute inset-y-0 right-0 h-full w-10 sm:w-14 object-cover scale-x-[-1]" style={{ opacity: 0.12 }} />
+          <img src={bgMinangMap} alt="" aria-hidden loading="lazy" className="pointer-events-none absolute inset-0 m-auto w-[78%] h-[78%] object-contain transition-transform duration-700 group-hover:scale-105" style={{ opacity: 0.10 }} />
           <div className="relative z-10">
-            <MapPin className="w-8 h-8 text-gold mx-auto mb-3" />
+            <MapPin className="w-8 h-8 text-gold mx-auto mb-3 animate-float-slow" />
             <h3 className="font-serif-display text-2xl text-primary">Lokasi</h3>
             <p className="text-muted-foreground mt-2">JG7Q+94J, Pasie Laweh,<br/>Kec. Sungai Tarab, Kabupaten Tanah Datar,<br/>Sumatera Barat 27261</p>
-            <Button asChild className="mt-5 bg-gold hover:bg-gold/90 text-primary-foreground rounded-full">
+            <Button asChild className="mt-5 rounded-full text-primary-foreground shadow-elegant hover:scale-105 transition-transform" style={{ background: "linear-gradient(135deg, #b88a2a, #f5d27a, #b88a2a)" }}>
               <a href="https://maps.app.goo.gl/F3jEsuCrH6HGruDZA" target="_blank" rel="noreferrer">
-                <MapPin className="w-4 h-4 mr-2" /> Lihat Lokasi
+                <MapPin className="w-4 h-4 mr-2" /> Lihat Lokasi di Google Maps
               </a>
             </Button>
           </div>
