@@ -129,8 +129,8 @@ const Index = () => {
         </div>
         <div className="grid md:grid-cols-2 gap-10">
           {[
-            { name: "Randi Saputra", role: "Putra ke-2 dari", parents: "Bapak dan Ibu", side: "The Groom", photo: randiPhoto },
-            { name: "Helfiana", role: "Putri ke-2 dari", parents: "Bapak dan Ibu", side: "The Bride", photo: helfiPhoto },
+            { name: "Randi Saputra", role: "Putra ke-2 dari", parents: "Bpk. Lukman & Ibu Amrina", side: "The Groom", photo: randiPhoto },
+            { name: "Helfiana Anggraini", role: "Putri ke-2 dari", parents: "Bpk. Heri Sukandi & Ibu Nengsi Harni", side: "The Bride", photo: helfiPhoto },
           ].map((p) => (
             <div key={p.name} className="bg-card/80 backdrop-blur border border-gold/30 rounded-2xl p-8 text-center shadow-elegant animate-fade-up">
               <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-gold/40 animate-float-slow">
