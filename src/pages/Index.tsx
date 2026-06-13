@@ -82,6 +82,8 @@ const Index = () => {
   return (
     <div className="min-h-screen relative pb-32 sm:pb-28">
       <SparkleEffect />
+      <SakuraPetals />
+
       <BottomNav />
       <div className="fixed inset-0 -z-10" style={{ backgroundImage: `url(${bgTexture})`, backgroundSize: "cover", backgroundPosition: "center" }} />
       <img src={coupleOverlay} alt="" className="fixed inset-0 -z-10 w-full h-full object-cover opacity-35 pointer-events-none" />
