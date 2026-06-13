@@ -10,6 +10,7 @@ import { GalleryLightbox } from "@/components/wedding/GalleryLightbox";
 import { BottomNav } from "@/components/wedding/BottomNav";
 import { SparkleEffect } from "@/components/wedding/SparkleEffect";
 import { SakuraPetals } from "@/components/wedding/SakuraPetals";
+import { LoveStory } from "@/components/wedding/LoveStory";
 import floralBorder from "@/assets/bg-floral-green.jpeg";
 import coupleHero from "@/assets/couple-overlay.jpeg";
 import bgTexture from "@/assets/bg-floral-green.jpeg";
