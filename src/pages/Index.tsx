@@ -122,6 +122,9 @@ const Index = () => {
         <p className="text-gold mt-4 tracking-widest uppercase text-sm">— QS. Ar-Rum: 21</p>
       </section>
 
+      {/* LOVE STORY */}
+      <LoveStory />
+
       {/* COUPLE */}
       <section id="couple" className="py-16 px-6 max-w-4xl mx-auto scroll-mt-16">
         <div className="text-center mb-12">
