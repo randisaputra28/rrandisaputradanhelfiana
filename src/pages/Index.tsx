@@ -98,12 +98,8 @@ const Index = () => {
       {/* HERO */}
       <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden px-4">
         <img src={floralBorder} alt="" className="absolute top-0 left-0 w-full pointer-events-none opacity-80 z-10" />
-        <div className="absolute inset-0">
-          <img src={coupleHero} alt="Randi dan Helfi" className="w-full h-full object-cover opacity-40" />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/30 to-background" />
-        </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/20 to-background" />
         <div className="relative z-20 text-center w-full max-w-md mx-auto animate-fade-up">
-          <p lang="ar" dir="rtl" className="font-arabic text-2xl sm:text-3xl md:text-4xl text-gold mb-4 sm:mb-5 leading-loose drop-shadow-sm" style={{ textShadow: "0 1px 2px hsl(var(--background) / 0.6)" }}>بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
           <p className="text-[10px] sm:text-xs uppercase tracking-[0.3em] sm:tracking-[0.4em] text-muted-foreground mb-2">The Wedding of</p>
           <h1 className="font-script text-6xl sm:text-7xl md:text-9xl text-primary leading-none">Randi</h1>
           <p className="font-serif-display text-2xl sm:text-3xl text-gold my-1 sm:my-2">&</p>
@@ -115,11 +111,17 @@ const Index = () => {
       </section>
 
       {/* QUOTE */}
-      <section className="py-20 px-6 text-center max-w-2xl mx-auto animate-fade-up">
-        <p className="font-serif-display text-2xl md:text-3xl text-primary italic leading-relaxed">
-          "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu istri-istri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya."
-        </p>
-        <p className="text-gold mt-4 tracking-widest uppercase text-sm">— QS. Ar-Rum: 21</p>
+      <section className="py-16 px-6 max-w-2xl mx-auto animate-fade-up">
+        <div className="relative bg-card/85 backdrop-blur-md border border-gold/30 rounded-2xl shadow-elegant px-6 sm:px-10 py-10 text-center">
+          <Heart className="w-7 h-7 text-rose fill-rose mx-auto mb-5 animate-shimmer" />
+          <p lang="ar" dir="rtl" className="font-arabic text-xl sm:text-2xl md:text-3xl text-gold leading-loose mb-6">
+            ﴿وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً﴾
+          </p>
+          <p className="font-serif-display text-sm sm:text-base text-primary italic leading-relaxed">
+            "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan hidup dari jenismu sendiri supaya kamu merasa tenteram kepadanya, dan dijadikan-Nya di antaramu rasa kasih dan sayang."
+          </p>
+          <p className="text-gold mt-5 tracking-[0.3em] uppercase text-xs">— QS. Ar-Rum: 21</p>
+        </div>
       </section>
 
       {/* LOVE STORY */}
