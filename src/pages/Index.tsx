@@ -97,17 +97,16 @@ const Index = () => {
 
       {/* HERO */}
       <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden px-4">
-        <img src={floralBorder} alt="" className="absolute top-0 left-0 w-full pointer-events-none opacity-80 z-10" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/20 to-background" />
-        <div className="relative z-20 text-center w-full max-w-md mx-auto animate-fade-up">
-          <p className="text-[10px] sm:text-xs uppercase tracking-[0.3em] sm:tracking-[0.4em] text-muted-foreground mb-2">The Wedding of</p>
-          <h1 className="font-script text-6xl sm:text-7xl md:text-9xl text-primary leading-none">Randi</h1>
-          <p className="font-serif-display text-2xl sm:text-3xl text-gold my-1 sm:my-2">&</p>
-          <h1 className="font-script text-6xl sm:text-7xl md:text-9xl text-primary leading-none">Helfi</h1>
-          <div className="w-20 sm:w-24 h-px bg-gold mx-auto my-6 sm:my-8" />
-          <p className="font-serif-display text-lg sm:text-xl md:text-2xl text-primary">Jum'at, 21 &middot; Sabtu, 22 Agustus 2026</p>
+        <img src={floralBorder} alt="" className="absolute top-0 left-0 w-full pointer-events-none opacity-40 z-10" />
+        <div className="relative z-20 text-center w-full max-w-md mx-auto animate-fade-up drop-shadow-[0_2px_8px_rgba(255,255,255,0.6)]">
+          <p className="text-[11px] sm:text-xs uppercase tracking-[0.4em] text-gold font-semibold mb-3">The Wedding of</p>
+          <h1 className="font-script text-7xl sm:text-8xl md:text-9xl text-primary leading-none font-bold">Randi</h1>
+          <p className="font-serif-display text-3xl sm:text-4xl text-gold my-2">&</p>
+          <h1 className="font-script text-7xl sm:text-8xl md:text-9xl text-primary leading-none font-bold">Helfi</h1>
+          <div className="w-24 h-px bg-gold mx-auto my-6 sm:my-8" />
+          <p className="font-serif-display text-lg sm:text-xl md:text-2xl text-primary font-semibold">Jum'at, 21 &middot; Sabtu, 22 Agustus 2026</p>
         </div>
-        <img src={floralBorder} alt="" className="absolute bottom-0 left-0 w-full pointer-events-none opacity-80 rotate-180 z-10" />
+        <img src={floralBorder} alt="" className="absolute bottom-0 left-0 w-full pointer-events-none opacity-40 rotate-180 z-10" />
       </section>
 
       {/* QUOTE */}
