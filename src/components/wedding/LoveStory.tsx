@@ -89,20 +89,6 @@ export const LoveStory = () => {
         </ol>
       </div>
 
-      {/* Closing quote */}
-      <div
-        className="relative mt-14 mx-auto max-w-2xl bg-card/80 backdrop-blur-md border border-gold/30 rounded-2xl p-8 text-center shadow-elegant animate-fade-up"
-        style={{ animationDelay: "600ms" }}
-      >
-        <Heart className="w-7 h-7 text-rose mx-auto mb-3 fill-rose animate-shimmer" />
-        <p lang="ar" dir="rtl" className="font-arabic text-lg text-gold mb-3 leading-loose">
-          ﴿وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً﴾
-        </p>
-        <p className="font-serif-display italic text-primary leading-relaxed">
-          "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan hidup dari jenismu sendiri supaya kamu merasa tenteram kepadanya, dan dijadikan-Nya di antaramu rasa kasih dan sayang."
-        </p>
-        <p className="mt-3 text-xs uppercase tracking-[0.3em] text-gold">— QS. Ar-Rum: 21</p>
-      </div>
     </section>
   );
 };
