@@ -106,7 +106,6 @@ const Index = () => {
           <div className="w-24 h-px bg-gold mx-auto my-6 sm:my-8" />
           <p className="font-serif-display text-lg sm:text-xl md:text-2xl text-primary font-semibold">Jum'at, 21 &middot; Sabtu, 22 Agustus 2026</p>
         </div>
-        <img src={floralBorder} alt="" className="absolute bottom-0 left-0 w-full pointer-events-none opacity-40 rotate-180 z-10" />
       </section>
 
       {/* QUOTE */}
