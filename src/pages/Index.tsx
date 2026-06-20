@@ -83,7 +83,6 @@ const Index = () => {
   return (
     <div className="min-h-screen relative pb-32 sm:pb-28">
       <SparkleEffect />
-      <SakuraPetals />
 
       <BottomNav />
       <div className="fixed inset-0 -z-10" style={{ backgroundImage: `url(${bgTexture})`, backgroundSize: "cover", backgroundPosition: "center" }} />
@@ -131,20 +130,22 @@ const Index = () => {
           <p className="text-sm uppercase tracking-[0.3em] text-gold mb-2">The Bride & Groom</p>
           <h2 className="font-serif-display text-4xl text-primary">Mempelai Kami</h2>
         </div>
-        <div className="grid md:grid-cols-2 gap-10">
+        <div className="grid sm:grid-cols-2 gap-5 sm:gap-6">
           {[
             { name: "Randi Saputra", role: "Putra ke-2 dari", parents: "Bpk. Lukman & Ibu Amrina", side: "The Groom", photo: randiPhoto },
             { name: "Helfiana Anggraini", role: "Putri ke-2 dari", parents: "Bpk. Heri Sukandi & Ibu Nengsi Harni", side: "The Bride", photo: helfiPhoto },
-          ].map((p) => (
-            <div key={p.name} className="bg-card/80 backdrop-blur border border-gold/30 rounded-2xl p-8 text-center shadow-elegant animate-fade-up">
-              <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-gold/40 animate-float-slow">
-                <img src={p.photo} alt={p.name} className="w-full h-full object-cover" loading="lazy" />
+          ].map((p, i) => (
+            <DoorReveal key={p.name} delay={i * 150} className="rounded-2xl">
+              <div className="bg-card/80 backdrop-blur border border-gold/30 rounded-2xl p-6 sm:p-8 text-center shadow-elegant">
+                <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-gold/40 animate-float-slow">
+                  <img src={p.photo} alt={p.name} className="w-full h-full object-cover object-top" loading="lazy" />
+                </div>
+                <p className="text-xs uppercase tracking-widest text-gold">{p.side}</p>
+                <h3 className="font-script text-3xl sm:text-4xl text-primary mt-2">{p.name}</h3>
+                <p className="text-sm text-muted-foreground mt-3">{p.role}</p>
+                <p className="text-sm text-primary font-medium">{p.parents}</p>
               </div>
-              <p className="text-xs uppercase tracking-widest text-gold">{p.side}</p>
-              <h3 className="font-script text-4xl text-primary mt-2">{p.name}</h3>
-              <p className="text-sm text-muted-foreground mt-3">{p.role}</p>
-              <p className="text-sm text-primary font-medium">{p.parents}</p>
-            </div>
+            </DoorReveal>
           ))}
         </div>
       </section>
@@ -162,39 +163,43 @@ const Index = () => {
           <p className="text-sm uppercase tracking-[0.3em] text-gold mb-2">Save The Date</p>
           <h2 className="font-serif-display text-4xl text-primary">Acara Pernikahan</h2>
         </div>
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
           {[
             { title: "Akad Nikah", time: "08:00 WIB - Selesai", date: "Jum'at, 21 Agustus 2026", bg: bgRings, opacity: 0.10 },
             { title: "Resepsi", time: "10:00 WIB - Selesai", date: "Sabtu, 22 Agustus 2026", bg: bgVenue, opacity: 0.10 },
-          ].map((e) => (
-            <div key={e.title} className="group relative overflow-hidden bg-card/80 backdrop-blur-md border border-gold/30 rounded-2xl p-8 text-center shadow-soft hover:shadow-elegant hover:-translate-y-1 hover:border-gold/60 transition-all duration-300 animate-fade-up">
-              <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: "radial-gradient(circle at 50% 0%, hsl(var(--gold) / 0.18), transparent 60%)" }} />
-              <img src={e.bg} alt="" aria-hidden loading="lazy" className="pointer-events-none absolute inset-0 m-auto w-[78%] h-[78%] object-contain" style={{ opacity: e.opacity }} />
-              <div className="relative z-10">
-                <Calendar className="w-8 h-8 text-gold mx-auto mb-3" />
-                <h3 className="font-serif-display text-3xl text-primary">{e.title}</h3>
-                <div className="w-12 h-px bg-gold mx-auto my-4" />
-                <p className="text-primary font-medium">{e.date}</p>
-                <p className="text-muted-foreground text-sm mt-1">{e.time}</p>
+          ].map((e, i) => (
+            <DoorReveal key={e.title} delay={i * 150} className="rounded-2xl">
+              <div className="group relative overflow-hidden bg-card/80 backdrop-blur-md border border-gold/30 rounded-2xl p-6 sm:p-8 text-center shadow-soft hover:shadow-elegant hover:-translate-y-1 hover:border-gold/60 transition-all duration-300">
+                <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: "radial-gradient(circle at 50% 0%, hsl(var(--gold) / 0.18), transparent 60%)" }} />
+                <img src={e.bg} alt="" aria-hidden loading="lazy" className="pointer-events-none absolute inset-0 m-auto w-[78%] h-[78%] object-contain" style={{ opacity: e.opacity }} />
+                <div className="relative z-10">
+                  <Calendar className="w-8 h-8 text-gold mx-auto mb-3" />
+                  <h3 className="font-serif-display text-2xl sm:text-3xl text-primary">{e.title}</h3>
+                  <div className="w-12 h-px bg-gold mx-auto my-3 sm:my-4" />
+                  <p className="text-primary font-medium text-sm sm:text-base">{e.date}</p>
+                  <p className="text-muted-foreground text-xs sm:text-sm mt-1">{e.time}</p>
+                </div>
               </div>
-            </div>
+            </DoorReveal>
           ))}
         </div>
-        <div className="group relative overflow-hidden mt-8 bg-card/80 backdrop-blur-md border border-gold/30 rounded-2xl p-8 text-center shadow-soft hover:shadow-elegant transition-all duration-300 animate-fade-up">
-          <img src={bgMarawa} alt="" aria-hidden loading="lazy" className="pointer-events-none absolute inset-y-0 left-0 h-full w-10 sm:w-14 object-cover" style={{ opacity: 0.12 }} />
-          <img src={bgMarawa} alt="" aria-hidden loading="lazy" className="pointer-events-none absolute inset-y-0 right-0 h-full w-10 sm:w-14 object-cover scale-x-[-1]" style={{ opacity: 0.12 }} />
-          <img src={bgMinangMap} alt="" aria-hidden loading="lazy" className="pointer-events-none absolute inset-0 m-auto w-[78%] h-[78%] object-contain transition-transform duration-700 group-hover:scale-105" style={{ opacity: 0.10 }} />
-          <div className="relative z-10">
-            <MapPin className="w-8 h-8 text-gold mx-auto mb-3 animate-float-slow" />
-            <h3 className="font-serif-display text-2xl text-primary">Lokasi</h3>
-            <p className="text-muted-foreground mt-2">JG7Q+94J, Pasie Laweh,<br/>Kec. Sungai Tarab, Kabupaten Tanah Datar,<br/>Sumatera Barat 27261</p>
-            <Button asChild className="mt-5 rounded-full text-primary-foreground shadow-elegant hover:scale-105 transition-transform" style={{ background: "linear-gradient(135deg, #b88a2a, #f5d27a, #b88a2a)" }}>
-              <a href="https://maps.app.goo.gl/F3jEsuCrH6HGruDZA" target="_blank" rel="noreferrer">
-                <MapPin className="w-4 h-4 mr-2" /> Lihat Lokasi di Google Maps
-              </a>
-            </Button>
+        <DoorReveal delay={200} className="rounded-2xl mt-5">
+          <div className="group relative overflow-hidden bg-card/80 backdrop-blur-md border border-gold/30 rounded-2xl p-6 sm:p-8 text-center shadow-soft hover:shadow-elegant transition-all duration-300">
+            <img src={bgMarawa} alt="" aria-hidden loading="lazy" className="pointer-events-none absolute inset-y-0 left-0 h-full w-10 sm:w-14 object-cover" style={{ opacity: 0.12 }} />
+            <img src={bgMarawa} alt="" aria-hidden loading="lazy" className="pointer-events-none absolute inset-y-0 right-0 h-full w-10 sm:w-14 object-cover scale-x-[-1]" style={{ opacity: 0.12 }} />
+            <img src={bgMinangMap} alt="" aria-hidden loading="lazy" className="pointer-events-none absolute inset-0 m-auto w-[78%] h-[78%] object-contain transition-transform duration-700 group-hover:scale-105" style={{ opacity: 0.10 }} />
+            <div className="relative z-10">
+              <MapPin className="w-8 h-8 text-gold mx-auto mb-3 animate-float-slow" />
+              <h3 className="font-serif-display text-2xl text-primary">Lokasi</h3>
+              <p className="text-muted-foreground mt-2 text-sm sm:text-base">JG7Q+94J, Pasie Laweh,<br/>Kec. Sungai Tarab, Kabupaten Tanah Datar,<br/>Sumatera Barat 27261</p>
+              <Button asChild className="mt-5 rounded-full text-primary-foreground shadow-elegant hover:scale-105 transition-transform" style={{ background: "linear-gradient(135deg, #b88a2a, #f5d27a, #b88a2a)" }}>
+                <a href="https://maps.app.goo.gl/F3jEsuCrH6HGruDZA" target="_blank" rel="noreferrer">
+                  <MapPin className="w-4 h-4 mr-2" /> Lihat Lokasi di Google Maps
+                </a>
+              </Button>
+            </div>
           </div>
-        </div>
+        </DoorReveal>
       </section>
 
       {/* GALLERY */}
