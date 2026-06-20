@@ -9,7 +9,7 @@ import { DigitalEnvelope } from "@/components/wedding/DigitalEnvelope";
 import { GalleryLightbox } from "@/components/wedding/GalleryLightbox";
 import { BottomNav } from "@/components/wedding/BottomNav";
 import { SparkleEffect } from "@/components/wedding/SparkleEffect";
-import { SakuraPetals } from "@/components/wedding/SakuraPetals";
+import { DoorReveal } from "@/components/wedding/DoorReveal";
 import { LoveStory } from "@/components/wedding/LoveStory";
 import floralBorder from "@/assets/bg-floral-green.jpeg";
 import coupleHero from "@/assets/couple-overlay.jpeg";
