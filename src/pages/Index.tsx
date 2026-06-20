@@ -108,7 +108,7 @@ const Index = () => {
       </section>
 
       {/* QUOTE */}
-      <section className="py-16 px-6 max-w-2xl mx-auto animate-fade-up">
+      <section className="py-10 sm:py-14 px-5 sm:px-6 max-w-2xl mx-auto animate-fade-up">
         <div className="relative bg-card/85 backdrop-blur-md border border-gold/30 rounded-2xl shadow-elegant px-6 sm:px-10 py-10 text-center">
           <Heart className="w-7 h-7 text-rose fill-rose mx-auto mb-5 animate-shimmer" />
           <p lang="ar" dir="rtl" className="font-arabic text-xl sm:text-2xl md:text-3xl text-gold leading-loose mb-6">
@@ -125,7 +125,7 @@ const Index = () => {
       <LoveStory />
 
       {/* COUPLE */}
-      <section id="couple" className="py-16 px-6 max-w-4xl mx-auto scroll-mt-16">
+      <section id="couple" className="py-10 sm:py-14 px-5 sm:px-6 max-w-4xl mx-auto scroll-mt-16">
         <div className="text-center mb-12">
           <p className="text-sm uppercase tracking-[0.3em] text-gold mb-2">The Bride & Groom</p>
           <h2 className="font-serif-display text-4xl text-primary">Mempelai Kami</h2>
@@ -151,14 +151,14 @@ const Index = () => {
       </section>
 
       {/* COUNTDOWN */}
-      <section className="py-16 px-6 text-center">
+      <section className="py-10 sm:py-14 px-5 sm:px-6 text-center">
         <p className="text-sm uppercase tracking-[0.3em] text-gold mb-2">Counting The Days</p>
         <h2 className="font-serif-display text-4xl text-primary mb-8">Menuju Hari Bahagia</h2>
         <Countdown targetDate={WEDDING_DATE} />
       </section>
 
       {/* EVENT */}
-      <section id="event" className="py-16 px-6 max-w-4xl mx-auto scroll-mt-16">
+      <section id="event" className="py-10 sm:py-14 px-5 sm:px-6 max-w-4xl mx-auto scroll-mt-16">
         <div className="text-center mb-10">
           <p className="text-sm uppercase tracking-[0.3em] text-gold mb-2">Save The Date</p>
           <h2 className="font-serif-display text-4xl text-primary">Acara Pernikahan</h2>
@@ -203,7 +203,7 @@ const Index = () => {
       </section>
 
       {/* GALLERY */}
-      <section id="gallery" className="py-16 px-6 max-w-5xl mx-auto scroll-mt-16">
+      <section id="gallery" className="py-10 sm:py-14 px-5 sm:px-6 max-w-5xl mx-auto scroll-mt-16">
         <div className="text-center mb-10">
           <p className="text-sm uppercase tracking-[0.3em] text-gold mb-2">Our Moments</p>
           <h2 className="font-serif-display text-4xl text-primary">Galeri</h2>
@@ -212,7 +212,7 @@ const Index = () => {
       </section>
 
       {/* RSVP & GUESTBOOK */}
-      <section id="rsvp" className="py-16 px-6 max-w-5xl mx-auto scroll-mt-16">
+      <section id="rsvp" className="py-10 sm:py-14 px-5 sm:px-6 max-w-5xl mx-auto scroll-mt-16">
         <div className="text-center mb-10">
           <p className="text-sm uppercase tracking-[0.3em] text-gold mb-2">RSVP</p>
           <h2 className="font-serif-display text-4xl text-primary">Konfirmasi Kehadiran</h2>
@@ -227,7 +227,7 @@ const Index = () => {
       </section>
 
       {/* GIFT */}
-      <section id="gift" className="py-16 px-6 text-center max-w-2xl mx-auto scroll-mt-16">
+      <section id="gift" className="py-10 sm:py-14 px-5 sm:px-6 text-center max-w-2xl mx-auto scroll-mt-16">
         <p className="text-sm uppercase tracking-[0.3em] text-gold mb-2">Wedding Gift</p>
         <h2 className="font-serif-display text-4xl text-primary mb-4">Tanda Kasih</h2>
         <p className="text-muted-foreground mb-6">
@@ -237,7 +237,7 @@ const Index = () => {
       </section>
 
       {/* CLOSING */}
-      <section className="relative py-24 px-6 text-center overflow-hidden">
+      <section className="relative py-16 sm:py-20 px-5 sm:px-6 text-center overflow-hidden">
         <img src={floralBorder} alt="" className="absolute top-0 left-0 w-full pointer-events-none opacity-70" />
         <div className="relative z-10 max-w-2xl mx-auto">
           <Heart className="w-10 h-10 text-rose mx-auto mb-4 fill-rose animate-shimmer" />
