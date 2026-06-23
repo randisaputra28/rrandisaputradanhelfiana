@@ -17,11 +17,11 @@ import bgTexture from "@/assets/bg-floral-green.jpeg";
 import coupleOverlay from "@/assets/couple-overlay.jpeg";
 import randiPhoto from "@/assets/randi.jpg";
 import helfiPhoto from "@/assets/helfi.jpeg";
-import galleryHeart from "@/assets/gallery-heart.jpg.asset.json";
-import galleryPose from "@/assets/gallery-pose.jpg.asset.json";
-import galleryRing from "@/assets/gallery-ring.jpg.asset.json";
-import galleryNoseTouch from "@/assets/gallery-nose-touch.jpg.asset.json";
-import galleryBackToBack from "@/assets/gallery-back-to-back.jpg.asset.json";
+import galleryHeart from "@/assets/gallery-heart.webp";
+import galleryPose from "@/assets/gallery-pose.webp";
+import galleryRing from "@/assets/gallery-ring.webp";
+import galleryNoseTouch from "@/assets/gallery-nose-touch.webp";
+import galleryBackToBack from "@/assets/gallery-back-to-back.webp";
 
 import bgRings from "@/assets/bg-rings.png";
 import bgVenue from "@/assets/bg-rumah-gadang.png";
@@ -30,11 +30,11 @@ import bgMarawa from "@/assets/bg-marawa.png";
 
 const WEDDING_DATE = new Date("2026-08-21T08:00:00+07:00");
 const GALLERY = [
-  { src: galleryHeart.url, alt: "Momen romantis membentuk hati" },
-  { src: galleryPose.url, alt: "Potret berdua penuh senyum" },
-  { src: galleryRing.url, alt: "Potret cincin pertunangan" },
-  { src: galleryNoseTouch.url, alt: "Momen manis saling menatap" },
-  { src: galleryBackToBack.url, alt: "Potret elegan bersandar" },
+  { src: galleryHeart, alt: "Momen romantis membentuk hati" },
+  { src: galleryPose, alt: "Potret berdua penuh senyum" },
+  { src: galleryRing, alt: "Potret cincin pertunangan" },
+  { src: galleryNoseTouch, alt: "Momen manis saling menatap" },
+  { src: galleryBackToBack, alt: "Potret elegan bersandar" },
 ];
 
 const LongTextPop = ({ text, className = "" }: { text: string; className?: string }) => {
