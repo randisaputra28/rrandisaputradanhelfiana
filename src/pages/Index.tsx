@@ -17,25 +17,43 @@ import bgTexture from "@/assets/bg-floral-green.jpeg";
 import coupleOverlay from "@/assets/couple-overlay.jpeg";
 import randiPhoto from "@/assets/randi.jpg";
 import helfiPhoto from "@/assets/helfi.jpeg";
-import g1 from "@/assets/gallery-1.jpeg";
-import g2 from "@/assets/gallery-2.jpeg";
-import g3 from "@/assets/gallery-3.jpeg";
-import g4 from "@/assets/gallery-4.jpeg";
+import galleryHeart from "@/assets/gallery-heart.webp";
+import galleryPose from "@/assets/gallery-pose.webp";
+import galleryRing from "@/assets/gallery-ring.webp";
+import galleryNoseTouch from "@/assets/gallery-nose-touch.webp";
+import galleryBackToBack from "@/assets/gallery-back-to-back.webp";
 
 import bgRings from "@/assets/bg-rings.png";
 import bgVenue from "@/assets/bg-rumah-gadang.png";
 import bgMinangMap from "@/assets/bg-minang-map.png";
 import bgMarawa from "@/assets/bg-marawa.png";
 
-
 const WEDDING_DATE = new Date("2026-08-21T08:00:00+07:00");
 const GALLERY = [
-  { src: g1, alt: "Momen 1" },
-  { src: g2, alt: "Momen 2" },
-  { src: g3, alt: "Momen 3" },
-  { src: g4, alt: "Momen 4" },
-  { src: coupleHero, alt: "Momen 5" },
+  { src: galleryHeart, alt: "Momen romantis membentuk hati" },
+  { src: galleryPose, alt: "Potret berdua penuh senyum" },
+  { src: galleryRing, alt: "Potret cincin pertunangan" },
+  { src: galleryNoseTouch, alt: "Momen manis saling menatap" },
+  { src: galleryBackToBack, alt: "Potret elegan bersandar" },
 ];
+
+const LongTextPop = ({ text, className = "" }: { text: string; className?: string }) => {
+  const words = text.split(" ");
+
+  return (
+    <span className={`text-pop ${className}`.trim()}>
+      {words.map((word, index) => (
+        <span
+          key={`${word}-${index}`}
+          className="text-pop-word"
+          style={{ animationDelay: `${index * 0.05}s` }}
+        >
+          {word}&nbsp;
+        </span>
+      ))}
+    </span>
+  );
+};
 
 const Index = () => {
   const [params] = useSearchParams();
@@ -56,8 +74,12 @@ const Index = () => {
   const toggleMusic = () => {
     const audio = document.getElementById("bg-music") as HTMLAudioElement | null;
     if (!audio) return;
-    if (musicOn) { audio.pause(); setMusicOn(false); }
-    else { audio.play().then(() => setMusicOn(true)).catch(() => {}); }
+    if (musicOn) {
+      audio.pause();
+      setMusicOn(false);
+    } else {
+      audio.play().then(() => setMusicOn(true)).catch(() => {});
+    }
   };
 
   if (!opened) {
@@ -94,43 +116,39 @@ const Index = () => {
         {musicOn ? <Music2 className="w-5 h-5 animate-shimmer" /> : <Music className="w-5 h-5" />}
       </button>
 
-      {/* HERO */}
-      <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden px-4">
-        <img src={floralBorder} alt="" className="absolute top-0 left-0 w-full pointer-events-none opacity-40 z-10" />
-        <div className="relative z-20 text-center w-full max-w-md mx-auto animate-fade-up drop-shadow-[0_2px_8px_rgba(255,255,255,0.6)]">
-          <p className="text-[11px] sm:text-xs uppercase tracking-[0.4em] text-gold font-semibold mb-3">The Wedding of</p>
-          <h1 className="font-script text-7xl sm:text-8xl md:text-9xl text-primary leading-none font-bold">Randi</h1>
-          <p className="font-serif-display text-3xl sm:text-4xl text-gold my-2">&</p>
-          <h1 className="font-script text-7xl sm:text-8xl md:text-9xl text-primary leading-none font-bold">Helfi</h1>
-          <div className="w-24 h-px bg-gold mx-auto my-6 sm:my-8" />
-          <p className="font-serif-display text-lg sm:text-xl md:text-2xl text-primary font-semibold">Jum'at, 21 &middot; Sabtu, 22 Agustus 2026</p>
+      <section id="hero" className="relative min-h-screen flex items-start justify-center overflow-hidden px-4 pt-10 sm:pt-12 pb-8 sm:pb-10">
+        <img src={floralBorder} alt="" className="absolute top-0 left-0 w-full pointer-events-none opacity-35 z-10" />
+        <div className="relative z-20 text-center w-full max-w-[20rem] sm:max-w-md mx-auto animate-fade-up drop-shadow-[0_2px_8px_rgba(255,255,255,0.6)] space-y-2 sm:space-y-3">
+          <p className="text-[10px] sm:text-xs uppercase tracking-[0.32em] text-gold font-semibold">The Wedding of</p>
+          <h1 className="font-script text-6xl sm:text-8xl md:text-9xl text-primary leading-[0.9] font-bold">Randi</h1>
+          <p className="font-serif-display text-2xl sm:text-4xl text-gold leading-none">&</p>
+          <h1 className="font-script text-6xl sm:text-8xl md:text-9xl text-primary leading-[0.9] font-bold">Helfi</h1>
+          <div className="w-20 sm:w-24 h-px bg-gold mx-auto my-4 sm:my-5" />
+          <p className="font-serif-display text-base sm:text-xl md:text-2xl text-primary font-semibold leading-snug">Jum'at, 21 · Sabtu, 22 Agustus 2026</p>
         </div>
       </section>
 
-      {/* QUOTE */}
-      <section className="py-10 sm:py-14 px-5 sm:px-6 max-w-2xl mx-auto animate-fade-up">
-        <div className="relative bg-card/85 backdrop-blur-md border border-gold/30 rounded-2xl shadow-elegant px-6 sm:px-10 py-10 text-center">
+      <section className="py-8 sm:py-10 px-4 sm:px-6 max-w-2xl mx-auto animate-fade-up -mt-2 sm:-mt-4">
+        <div className="relative bg-card/85 backdrop-blur-md border border-gold/30 rounded-2xl shadow-elegant px-5 sm:px-8 py-8 sm:py-9 text-center">
           <Heart className="w-7 h-7 text-rose fill-rose mx-auto mb-5 animate-shimmer" />
-          <p lang="ar" dir="rtl" className="font-arabic text-xl sm:text-2xl md:text-3xl text-gold leading-loose mb-6">
+          <p lang="ar" dir="rtl" className="font-arabic text-xl sm:text-2xl md:text-3xl text-gold leading-loose mb-5">
             ﴿وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً﴾
           </p>
           <p className="font-serif-display text-sm sm:text-base text-primary italic leading-relaxed">
-            "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan hidup dari jenismu sendiri supaya kamu merasa tenteram kepadanya, dan dijadikan-Nya di antaramu rasa kasih dan sayang."
+            <LongTextPop text="Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan hidup dari jenismu sendiri supaya kamu merasa tenteram kepadanya, dan dijadikan-Nya di antaramu rasa kasih dan sayang." />
           </p>
-          <p className="text-gold mt-5 tracking-[0.3em] uppercase text-xs">— QS. Ar-Rum: 21</p>
+          <p className="text-gold mt-4 tracking-[0.3em] uppercase text-xs">— QS. Ar-Rum: 21</p>
         </div>
       </section>
 
-      {/* LOVE STORY */}
       <LoveStory />
 
-      {/* COUPLE */}
-      <section id="couple" className="py-10 sm:py-14 px-5 sm:px-6 max-w-4xl mx-auto scroll-mt-16">
-        <div className="text-center mb-12">
+      <section id="couple" className="py-9 sm:py-12 px-5 sm:px-6 max-w-4xl mx-auto scroll-mt-16">
+        <div className="text-center mb-9">
           <p className="text-sm uppercase tracking-[0.3em] text-gold mb-2">The Bride & Groom</p>
           <h2 className="font-serif-display text-4xl text-primary">Mempelai Kami</h2>
         </div>
-        <div className="grid sm:grid-cols-2 gap-5 sm:gap-6">
+        <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
           {[
             { name: "Randi Saputra", role: "Putra ke-2 dari", parents: "Bpk. Lukman & Ibu Amrina", side: "The Groom", photo: randiPhoto },
             { name: "Helfiana Anggraini", role: "Putri ke-2 dari", parents: "Bpk. Heri Sukandi & Ibu Nengsi Harni", side: "The Bride", photo: helfiPhoto },
@@ -150,16 +168,14 @@ const Index = () => {
         </div>
       </section>
 
-      {/* COUNTDOWN */}
-      <section className="py-10 sm:py-14 px-5 sm:px-6 text-center">
+      <section className="py-9 sm:py-12 px-5 sm:px-6 text-center">
         <p className="text-sm uppercase tracking-[0.3em] text-gold mb-2">Counting The Days</p>
-        <h2 className="font-serif-display text-4xl text-primary mb-8">Menuju Hari Bahagia</h2>
+        <h2 className="font-serif-display text-4xl text-primary mb-7">Menuju Hari Bahagia</h2>
         <Countdown targetDate={WEDDING_DATE} />
       </section>
 
-      {/* EVENT */}
-      <section id="event" className="py-10 sm:py-14 px-5 sm:px-6 max-w-4xl mx-auto scroll-mt-16">
-        <div className="text-center mb-10">
+      <section id="event" className="py-9 sm:py-12 px-5 sm:px-6 max-w-4xl mx-auto scroll-mt-16">
+        <div className="text-center mb-8">
           <p className="text-sm uppercase tracking-[0.3em] text-gold mb-2">Save The Date</p>
           <h2 className="font-serif-display text-4xl text-primary">Acara Pernikahan</h2>
         </div>
@@ -183,7 +199,7 @@ const Index = () => {
             </DoorReveal>
           ))}
         </div>
-        <DoorReveal delay={200} className="rounded-2xl mt-5">
+        <DoorReveal delay={200} className="rounded-2xl mt-4">
           <div className="group relative overflow-hidden bg-card/80 backdrop-blur-md border border-gold/30 rounded-2xl p-6 sm:p-8 text-center shadow-soft hover:shadow-elegant transition-all duration-300">
             <img src={bgMarawa} alt="" aria-hidden loading="lazy" className="pointer-events-none absolute inset-y-0 left-0 h-full w-10 sm:w-14 object-cover" style={{ opacity: 0.12 }} />
             <img src={bgMarawa} alt="" aria-hidden loading="lazy" className="pointer-events-none absolute inset-y-0 right-0 h-full w-10 sm:w-14 object-cover scale-x-[-1]" style={{ opacity: 0.12 }} />
@@ -191,7 +207,7 @@ const Index = () => {
             <div className="relative z-10">
               <MapPin className="w-8 h-8 text-gold mx-auto mb-3 animate-float-slow" />
               <h3 className="font-serif-display text-2xl text-primary">Lokasi</h3>
-              <p className="text-muted-foreground mt-2 text-sm sm:text-base">JG7Q+94J, Pasie Laweh,<br/>Kec. Sungai Tarab, Kabupaten Tanah Datar,<br/>Sumatera Barat 27261</p>
+              <p className="text-muted-foreground mt-2 text-sm sm:text-base">JG7Q+94J, Pasie Laweh,<br />Kec. Sungai Tarab, Kabupaten Tanah Datar,<br />Sumatera Barat 27261</p>
               <Button asChild className="mt-5 rounded-full text-primary-foreground shadow-elegant hover:scale-105 transition-transform" style={{ background: "linear-gradient(135deg, #b88a2a, #f5d27a, #b88a2a)" }}>
                 <a href="https://maps.app.goo.gl/F3jEsuCrH6HGruDZA" target="_blank" rel="noreferrer">
                   <MapPin className="w-4 h-4 mr-2" /> Lihat Lokasi di Google Maps
@@ -202,22 +218,20 @@ const Index = () => {
         </DoorReveal>
       </section>
 
-      {/* GALLERY */}
-      <section id="gallery" className="py-10 sm:py-14 px-5 sm:px-6 max-w-5xl mx-auto scroll-mt-16">
-        <div className="text-center mb-10">
+      <section id="gallery" className="py-9 sm:py-12 px-5 sm:px-6 max-w-5xl mx-auto scroll-mt-16">
+        <div className="text-center mb-8">
           <p className="text-sm uppercase tracking-[0.3em] text-gold mb-2">Our Moments</p>
           <h2 className="font-serif-display text-4xl text-primary">Galeri</h2>
         </div>
         <GalleryLightbox images={GALLERY} />
       </section>
 
-      {/* RSVP & GUESTBOOK */}
-      <section id="rsvp" className="py-10 sm:py-14 px-5 sm:px-6 max-w-5xl mx-auto scroll-mt-16">
-        <div className="text-center mb-10">
+      <section id="rsvp" className="py-9 sm:py-12 px-5 sm:px-6 max-w-5xl mx-auto scroll-mt-16">
+        <div className="text-center mb-8">
           <p className="text-sm uppercase tracking-[0.3em] text-gold mb-2">RSVP</p>
           <h2 className="font-serif-display text-4xl text-primary">Konfirmasi Kehadiran</h2>
         </div>
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-6">
           <RsvpForm defaultName={guestName !== "Tamu Undangan" ? guestName : ""} />
           <div>
             <h3 className="font-serif-display text-2xl text-primary mb-4 text-center md:text-left">Ucapan & Doa</h3>
@@ -226,23 +240,21 @@ const Index = () => {
         </div>
       </section>
 
-      {/* GIFT */}
-      <section id="gift" className="py-10 sm:py-14 px-5 sm:px-6 text-center max-w-2xl mx-auto scroll-mt-16">
+      <section id="gift" className="py-9 sm:py-12 px-5 sm:px-6 text-center max-w-2xl mx-auto scroll-mt-16">
         <p className="text-sm uppercase tracking-[0.3em] text-gold mb-2">Wedding Gift</p>
         <h2 className="font-serif-display text-4xl text-primary mb-4">Tanda Kasih</h2>
         <p className="text-muted-foreground mb-6">
-          Doa restu Anda adalah hadiah terbaik. Bagi yang ingin mengirimkan tanda kasih, kami sediakan amplop digital.
+          <LongTextPop text="Doa restu Anda adalah hadiah terbaik. Bagi yang ingin mengirimkan tanda kasih, kami sediakan amplop digital." />
         </p>
         <DigitalEnvelope />
       </section>
 
-      {/* CLOSING */}
-      <section className="relative py-16 sm:py-20 px-5 sm:px-6 text-center overflow-hidden">
+      <section className="relative py-14 sm:py-18 px-5 sm:px-6 text-center overflow-hidden">
         <img src={floralBorder} alt="" className="absolute top-0 left-0 w-full pointer-events-none opacity-70" />
         <div className="relative z-10 max-w-2xl mx-auto">
           <Heart className="w-10 h-10 text-rose mx-auto mb-4 fill-rose animate-shimmer" />
           <p className="font-serif-display text-xl md:text-2xl text-primary italic leading-relaxed">
-            Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu kepada kami.
+            <LongTextPop text="Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu kepada kami." />
           </p>
           <p className="mt-6 text-sm uppercase tracking-widest text-gold">Wassalamualaikum Wr. Wb.</p>
           <p className="mt-8 font-serif-display text-lg text-muted-foreground">Hormat Kami,</p>

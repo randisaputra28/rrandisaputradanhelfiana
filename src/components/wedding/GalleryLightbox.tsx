@@ -36,17 +36,37 @@ export const GalleryLightbox = ({ images }: Props) => {
 
   return (
     <>
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-        {images.map((img, i) => (
-          <button
-            key={i}
-            type="button"
-            onClick={() => { setIdx(i); setOpen(true); }}
-            className="aspect-square overflow-hidden rounded-xl shadow-soft group cursor-zoom-in"
-          >
-            <img src={img.src} alt={img.alt} loading="lazy" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-          </button>
-        ))}
+      <div className="grid grid-cols-2 md:grid-cols-12 gap-3 sm:gap-4 auto-rows-[160px] sm:auto-rows-[200px]">
+        {images.map((img, i) => {
+          const layouts = [
+            "md:col-span-7 md:row-span-2",
+            "md:col-span-5 md:row-span-1",
+            "md:col-span-5 md:row-span-1",
+            "md:col-span-4 md:row-span-1",
+            "md:col-span-8 md:row-span-1",
+          ];
+
+          return (
+            <button
+              key={i}
+              type="button"
+              onClick={() => {
+                setIdx(i);
+                setOpen(true);
+              }}
+              className={`relative overflow-hidden rounded-2xl shadow-soft group cursor-zoom-in border border-gold/20 bg-card/60 ${layouts[i] ?? "md:col-span-4"}`}
+            >
+              <img
+                src={img.src}
+                alt={img.alt}
+                loading={i === 0 ? "eager" : "lazy"}
+                fetchPriority={i === 0 ? "high" : "auto"}
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent opacity-80" />
+            </button>
+          );
+        })}
       </div>
 
       <Dialog open={open} onOpenChange={setOpen}>
