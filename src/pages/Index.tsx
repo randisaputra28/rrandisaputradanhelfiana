@@ -22,6 +22,7 @@ import galleryPose from "@/assets/gallery-pose.webp";
 import galleryRing from "@/assets/gallery-ring.webp";
 import galleryNoseTouch from "@/assets/gallery-nose-touch.webp";
 import galleryBackToBack from "@/assets/gallery-back-to-back.webp";
+import galleryWhisperAsset from "@/assets/gallery-whisper.jpg.asset.json";
 
 import bgRings from "@/assets/bg-rings.png";
 import bgVenue from "@/assets/bg-rumah-gadang.png";
@@ -31,11 +32,15 @@ import bgMarawa from "@/assets/bg-marawa.png";
 const WEDDING_DATE = new Date("2026-08-21T08:00:00+07:00");
 const GALLERY = [
   { src: galleryHeart, alt: "Momen romantis membentuk hati" },
+  { src: galleryWhisperAsset.url, alt: "Momen berbisik penuh cerita" },
   { src: galleryPose, alt: "Potret berdua penuh senyum" },
   { src: galleryRing, alt: "Potret cincin pertunangan" },
   { src: galleryNoseTouch, alt: "Momen manis saling menatap" },
   { src: galleryBackToBack, alt: "Potret elegan bersandar" },
 ];
+
+
+
 
 const LongTextPop = ({ text, className = "" }: { text: string; className?: string }) => {
   const words = text.split(" ");
@@ -84,17 +89,17 @@ const Index = () => {
 
   if (!opened) {
     return (
-      <div className="min-h-screen relative flex items-center justify-center overflow-hidden">
+      <div className="mobile-shell min-h-screen relative flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0" style={{ backgroundImage: `url(${bgTexture})`, backgroundSize: "cover", backgroundPosition: "center" }} />
         <img src={coupleOverlay} alt="" className="absolute inset-0 w-full h-full object-cover opacity-60 pointer-events-none" />
         <div className="absolute inset-0 bg-background/40" />
         <div className="relative z-10 text-center px-6 max-w-md animate-fade-up">
           <p className="text-sm uppercase tracking-[0.4em] text-gold mb-3">The Wedding of</p>
-          <h1 className="font-script text-6xl md:text-7xl text-primary mb-2">Randi & Helfi</h1>
+          <h1 className="font-script text-6xl md:text-7xl text-primary mb-2 text-4d">Randi & Helfi</h1>
           <div className="w-20 h-px bg-gold mx-auto my-6" />
           <p className="text-muted-foreground text-sm mb-1">Kepada Yth. Bapak/Ibu/Saudara/i</p>
           <p className="font-serif-display text-2xl text-primary font-semibold mb-8">{guestName}</p>
-          <Button onClick={() => setOpened(true)} size="lg" className="bg-gold hover:bg-gold/90 text-primary-foreground rounded-full px-8 shadow-elegant">
+          <Button onClick={() => setOpened(true)} size="lg" className="bg-gold hover:bg-gold/90 text-primary-foreground rounded-full px-8 shadow-elegant min-h-12">
             <BookOpen className="w-4 h-4 mr-2" /> Buka Undangan
           </Button>
         </div>
@@ -103,7 +108,8 @@ const Index = () => {
   }
 
   return (
-    <div className="min-h-screen relative pb-32 sm:pb-28">
+    <div className="mobile-shell min-h-screen relative pb-32 sm:pb-28">
+
       <SparkleEffect />
 
       <BottomNav />
@@ -120,9 +126,10 @@ const Index = () => {
         <img src={floralBorder} alt="" className="absolute top-0 left-0 w-full pointer-events-none opacity-35 z-10" />
         <div className="relative z-20 text-center w-full max-w-[20rem] sm:max-w-md mx-auto animate-fade-up drop-shadow-[0_2px_8px_rgba(255,255,255,0.6)] space-y-2 sm:space-y-3">
           <p className="text-[10px] sm:text-xs uppercase tracking-[0.32em] text-gold font-semibold">The Wedding of</p>
-          <h1 className="font-script text-6xl sm:text-8xl md:text-9xl text-primary leading-[0.9] font-bold">Randi</h1>
+          <h1 className="font-script text-6xl sm:text-8xl md:text-9xl text-primary leading-[0.9] font-bold text-4d">Randi</h1>
           <p className="font-serif-display text-2xl sm:text-4xl text-gold leading-none">&</p>
-          <h1 className="font-script text-6xl sm:text-8xl md:text-9xl text-primary leading-[0.9] font-bold">Helfi</h1>
+          <h1 className="font-script text-6xl sm:text-8xl md:text-9xl text-primary leading-[0.9] font-bold text-4d">Helfi</h1>
+
           <div className="w-20 sm:w-24 h-px bg-gold mx-auto my-4 sm:my-5" />
           <p className="font-serif-display text-base sm:text-xl md:text-2xl text-primary font-semibold leading-snug">Jum'at, 21 · Sabtu, 22 Agustus 2026</p>
         </div>
@@ -208,11 +215,21 @@ const Index = () => {
               <MapPin className="w-8 h-8 text-gold mx-auto mb-3 animate-float-slow" />
               <h3 className="font-serif-display text-2xl text-primary">Lokasi</h3>
               <p className="text-muted-foreground mt-2 text-sm sm:text-base">JG7Q+94J, Pasie Laweh,<br />Kec. Sungai Tarab, Kabupaten Tanah Datar,<br />Sumatera Barat 27261</p>
-              <Button asChild className="mt-5 rounded-full text-primary-foreground shadow-elegant hover:scale-105 transition-transform" style={{ background: "linear-gradient(135deg, #b88a2a, #f5d27a, #b88a2a)" }}>
+              <div className="mt-5 rounded-2xl overflow-hidden border border-gold/40 shadow-elegant">
+                <iframe
+                  title="Lokasi Pernikahan"
+                  src="https://www.google.com/maps?q=JG7Q%2B94J+Pasie+Laweh+Sungai+Tarab+Tanah+Datar&output=embed"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="w-full h-56 sm:h-64"
+                />
+              </div>
+              <Button asChild className="mt-4 rounded-full text-primary-foreground shadow-elegant hover:scale-105 transition-transform min-h-12" style={{ background: "linear-gradient(135deg, #b88a2a, #f5d27a, #b88a2a)" }}>
                 <a href="https://maps.app.goo.gl/F3jEsuCrH6HGruDZA" target="_blank" rel="noreferrer">
-                  <MapPin className="w-4 h-4 mr-2" /> Lihat Lokasi di Google Maps
+                  <MapPin className="w-4 h-4 mr-2" /> Buka di Google Maps
                 </a>
               </Button>
+
             </div>
           </div>
         </DoorReveal>
@@ -225,6 +242,29 @@ const Index = () => {
         </div>
         <GalleryLightbox images={GALLERY} />
       </section>
+
+      <section id="doa" className="py-9 sm:py-12 px-5 sm:px-6 max-w-2xl mx-auto scroll-mt-16">
+        <div className="text-center mb-6">
+          <p className="text-sm uppercase tracking-[0.3em] text-gold mb-2">Doa Untuk Pengantin</p>
+          <h2 className="font-serif-display text-3xl sm:text-4xl text-primary text-4d-soft">Barakallahu Laka</h2>
+        </div>
+        <DoorReveal className="rounded-2xl">
+          <div className="relative bg-card/85 backdrop-blur-md border border-gold/40 rounded-2xl shadow-elegant px-5 sm:px-8 py-8 sm:py-10 text-center overflow-hidden">
+            <div className="pointer-events-none absolute -top-16 -left-16 w-48 h-48 rounded-full" style={{ background: "radial-gradient(circle, hsl(var(--gold) / 0.22), transparent 70%)" }} />
+            <div className="pointer-events-none absolute -bottom-16 -right-16 w-48 h-48 rounded-full" style={{ background: "radial-gradient(circle, hsl(var(--rose) / 0.18), transparent 70%)" }} />
+            <Heart className="w-7 h-7 text-rose fill-rose mx-auto mb-5 animate-shimmer relative z-10" />
+            <p lang="ar" dir="rtl" className="font-arabic text-xl sm:text-2xl md:text-3xl text-gold leading-loose mb-5 relative z-10">
+              بَارَكَ اللّٰهُ لَكَ وَبَارَكَ عَلَيْكَ وَجَمَعَ بَيْنَكُمَا فِيْ خَيْرٍ
+            </p>
+            <p className="font-serif-display text-sm sm:text-base text-primary italic leading-relaxed relative z-10">
+              <LongTextPop text="Semoga Allah memberkahimu dan memberkahi pernikahanmu, serta semoga Allah mempersatukan kalian berdua dalam kebaikan." />
+            </p>
+            <p className="text-gold mt-4 tracking-[0.3em] uppercase text-xs relative z-10">— Doa Pernikahan</p>
+          </div>
+        </DoorReveal>
+      </section>
+
+
 
       <section id="rsvp" className="py-9 sm:py-12 px-5 sm:px-6 max-w-5xl mx-auto scroll-mt-16">
         <div className="text-center mb-8">

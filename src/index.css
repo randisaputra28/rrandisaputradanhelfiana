@@ -86,6 +86,10 @@
     @apply bg-background text-foreground;
     font-family: 'Poppins', sans-serif;
   }
+  @media (min-width: 640px) {
+    body { background: radial-gradient(ellipse at top, hsl(25 30% 12%), hsl(25 30% 6%)); }
+  }
+
   h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; }
   .font-script { font-family: 'Great Vibes', cursive; }
   .font-serif-display { font-family: 'Cormorant Garamond', serif; }
@@ -176,7 +180,74 @@
   .door-open .door-panel-left { transform: translateX(-101%); }
   .door-open .door-panel-right { transform: translateX(101%); }
   .door-open .door-content { opacity: 1; transform: scale(1); }
+
+  /* 4D lifelike text */
+  .text-4d {
+    text-shadow:
+      0 1px 0 hsl(var(--gold) / 0.55),
+      0 2px 0 hsl(var(--gold) / 0.45),
+      0 3px 0 hsl(var(--gold) / 0.35),
+      0 4px 0 hsl(var(--gold) / 0.25),
+      0 6px 12px hsl(25 45% 18% / 0.35),
+      0 10px 24px hsl(25 45% 18% / 0.25);
+    transform: perspective(600px) rotateX(6deg);
+    display: inline-block;
+    animation: float-slow 6s ease-in-out infinite;
+  }
+  .text-4d-soft {
+    text-shadow:
+      0 1px 0 hsl(var(--primary) / 0.35),
+      0 2px 0 hsl(var(--primary) / 0.22),
+      0 4px 10px hsl(25 45% 18% / 0.28);
+  }
+
+  /* Aesthetic photo frame */
+  .photo-frame {
+    position: relative;
+    padding: 6px;
+    background: linear-gradient(135deg, hsl(var(--gold-light)), hsl(var(--gold)) 45%, hsl(var(--gold-light)));
+    box-shadow:
+      0 20px 40px -20px hsl(25 45% 18% / 0.45),
+      inset 0 0 0 1px hsl(var(--gold) / 0.6);
+    border-radius: 1rem;
+  }
+  .photo-frame::after {
+    content: "";
+    position: absolute;
+    inset: 3px;
+    border-radius: 0.85rem;
+    border: 1px solid hsl(36 40% 98% / 0.55);
+    pointer-events: none;
+    z-index: 3;
+  }
+  .photo-frame > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.75rem;
+    filter: contrast(1.05) saturate(1.08) brightness(1.02);
+    transition: transform 0.7s ease, filter 0.7s ease;
+  }
+  .photo-frame:hover > img {
+    transform: scale(1.05);
+    filter: contrast(1.1) saturate(1.15) brightness(1.05);
+  }
+
+  /* Mobile-only viewport wrapper (Android frame on desktop) */
+  .mobile-shell {
+    max-width: 430px;
+    margin-inline: auto;
+    position: relative;
+    background: hsl(var(--background));
+    box-shadow: 0 30px 80px -20px hsl(25 45% 18% / 0.35);
+    overflow-x: hidden;
+  }
+  @media (min-width: 640px) {
+    .mobile-shell { border: 1px solid hsl(var(--gold) / 0.25); border-radius: 28px; }
+  }
 }
+
 
 @media (prefers-reduced-motion: reduce) {
   .text-pop-word,
