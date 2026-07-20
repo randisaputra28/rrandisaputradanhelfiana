@@ -40,14 +40,7 @@ const GALLERY = [
 ];
 
 
-const WEDDING_DATE = new Date("2026-08-21T08:00:00+07:00");
-const GALLERY = [
-  { src: galleryHeart, alt: "Momen romantis membentuk hati" },
-  { src: galleryPose, alt: "Potret berdua penuh senyum" },
-  { src: galleryRing, alt: "Potret cincin pertunangan" },
-  { src: galleryNoseTouch, alt: "Momen manis saling menatap" },
-  { src: galleryBackToBack, alt: "Potret elegan bersandar" },
-];
+
 
 const LongTextPop = ({ text, className = "" }: { text: string; className?: string }) => {
   const words = text.split(" ");
