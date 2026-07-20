@@ -243,6 +243,29 @@ const Index = () => {
         <GalleryLightbox images={GALLERY} />
       </section>
 
+      <section id="doa" className="py-9 sm:py-12 px-5 sm:px-6 max-w-2xl mx-auto scroll-mt-16">
+        <div className="text-center mb-6">
+          <p className="text-sm uppercase tracking-[0.3em] text-gold mb-2">Doa Untuk Pengantin</p>
+          <h2 className="font-serif-display text-3xl sm:text-4xl text-primary text-4d-soft">Barakallahu Laka</h2>
+        </div>
+        <DoorReveal className="rounded-2xl">
+          <div className="relative bg-card/85 backdrop-blur-md border border-gold/40 rounded-2xl shadow-elegant px-5 sm:px-8 py-8 sm:py-10 text-center overflow-hidden">
+            <div className="pointer-events-none absolute -top-16 -left-16 w-48 h-48 rounded-full" style={{ background: "radial-gradient(circle, hsl(var(--gold) / 0.22), transparent 70%)" }} />
+            <div className="pointer-events-none absolute -bottom-16 -right-16 w-48 h-48 rounded-full" style={{ background: "radial-gradient(circle, hsl(var(--rose) / 0.18), transparent 70%)" }} />
+            <Heart className="w-7 h-7 text-rose fill-rose mx-auto mb-5 animate-shimmer relative z-10" />
+            <p lang="ar" dir="rtl" className="font-arabic text-xl sm:text-2xl md:text-3xl text-gold leading-loose mb-5 relative z-10">
+              بَارَكَ اللّٰهُ لَكَ وَبَارَكَ عَلَيْكَ وَجَمَعَ بَيْنَكُمَا فِيْ خَيْرٍ
+            </p>
+            <p className="font-serif-display text-sm sm:text-base text-primary italic leading-relaxed relative z-10">
+              <LongTextPop text="Semoga Allah memberkahimu dan memberkahi pernikahanmu, serta semoga Allah mempersatukan kalian berdua dalam kebaikan." />
+            </p>
+            <p className="text-gold mt-4 tracking-[0.3em] uppercase text-xs relative z-10">— Doa Pernikahan</p>
+          </div>
+        </DoorReveal>
+      </section>
+
+
+
       <section id="rsvp" className="py-9 sm:py-12 px-5 sm:px-6 max-w-5xl mx-auto scroll-mt-16">
         <div className="text-center mb-8">
           <p className="text-sm uppercase tracking-[0.3em] text-gold mb-2">RSVP</p>
