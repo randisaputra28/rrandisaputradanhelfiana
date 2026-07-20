@@ -89,17 +89,17 @@ const Index = () => {
 
   if (!opened) {
     return (
-      <div className="min-h-screen relative flex items-center justify-center overflow-hidden">
+      <div className="mobile-shell min-h-screen relative flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0" style={{ backgroundImage: `url(${bgTexture})`, backgroundSize: "cover", backgroundPosition: "center" }} />
         <img src={coupleOverlay} alt="" className="absolute inset-0 w-full h-full object-cover opacity-60 pointer-events-none" />
         <div className="absolute inset-0 bg-background/40" />
         <div className="relative z-10 text-center px-6 max-w-md animate-fade-up">
           <p className="text-sm uppercase tracking-[0.4em] text-gold mb-3">The Wedding of</p>
-          <h1 className="font-script text-6xl md:text-7xl text-primary mb-2">Randi & Helfi</h1>
+          <h1 className="font-script text-6xl md:text-7xl text-primary mb-2 text-4d">Randi & Helfi</h1>
           <div className="w-20 h-px bg-gold mx-auto my-6" />
           <p className="text-muted-foreground text-sm mb-1">Kepada Yth. Bapak/Ibu/Saudara/i</p>
           <p className="font-serif-display text-2xl text-primary font-semibold mb-8">{guestName}</p>
-          <Button onClick={() => setOpened(true)} size="lg" className="bg-gold hover:bg-gold/90 text-primary-foreground rounded-full px-8 shadow-elegant">
+          <Button onClick={() => setOpened(true)} size="lg" className="bg-gold hover:bg-gold/90 text-primary-foreground rounded-full px-8 shadow-elegant min-h-12">
             <BookOpen className="w-4 h-4 mr-2" /> Buka Undangan
           </Button>
         </div>
@@ -108,7 +108,8 @@ const Index = () => {
   }
 
   return (
-    <div className="min-h-screen relative pb-32 sm:pb-28">
+    <div className="mobile-shell min-h-screen relative pb-32 sm:pb-28">
+
       <SparkleEffect />
 
       <BottomNav />
