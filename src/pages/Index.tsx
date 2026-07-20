@@ -126,9 +126,10 @@ const Index = () => {
         <img src={floralBorder} alt="" className="absolute top-0 left-0 w-full pointer-events-none opacity-35 z-10" />
         <div className="relative z-20 text-center w-full max-w-[20rem] sm:max-w-md mx-auto animate-fade-up drop-shadow-[0_2px_8px_rgba(255,255,255,0.6)] space-y-2 sm:space-y-3">
           <p className="text-[10px] sm:text-xs uppercase tracking-[0.32em] text-gold font-semibold">The Wedding of</p>
-          <h1 className="font-script text-6xl sm:text-8xl md:text-9xl text-primary leading-[0.9] font-bold">Randi</h1>
+          <h1 className="font-script text-6xl sm:text-8xl md:text-9xl text-primary leading-[0.9] font-bold text-4d">Randi</h1>
           <p className="font-serif-display text-2xl sm:text-4xl text-gold leading-none">&</p>
-          <h1 className="font-script text-6xl sm:text-8xl md:text-9xl text-primary leading-[0.9] font-bold">Helfi</h1>
+          <h1 className="font-script text-6xl sm:text-8xl md:text-9xl text-primary leading-[0.9] font-bold text-4d">Helfi</h1>
+
           <div className="w-20 sm:w-24 h-px bg-gold mx-auto my-4 sm:my-5" />
           <p className="font-serif-display text-base sm:text-xl md:text-2xl text-primary font-semibold leading-snug">Jum'at, 21 · Sabtu, 22 Agustus 2026</p>
         </div>
