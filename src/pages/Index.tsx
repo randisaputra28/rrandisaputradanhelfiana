@@ -22,11 +22,23 @@ import galleryPose from "@/assets/gallery-pose.webp";
 import galleryRing from "@/assets/gallery-ring.webp";
 import galleryNoseTouch from "@/assets/gallery-nose-touch.webp";
 import galleryBackToBack from "@/assets/gallery-back-to-back.webp";
+import galleryWhisperAsset from "@/assets/gallery-whisper.jpg.asset.json";
 
 import bgRings from "@/assets/bg-rings.png";
 import bgVenue from "@/assets/bg-rumah-gadang.png";
 import bgMinangMap from "@/assets/bg-minang-map.png";
 import bgMarawa from "@/assets/bg-marawa.png";
+
+const WEDDING_DATE = new Date("2026-08-21T08:00:00+07:00");
+const GALLERY = [
+  { src: galleryHeart, alt: "Momen romantis membentuk hati" },
+  { src: galleryWhisperAsset.url, alt: "Momen berbisik penuh cerita" },
+  { src: galleryPose, alt: "Potret berdua penuh senyum" },
+  { src: galleryRing, alt: "Potret cincin pertunangan" },
+  { src: galleryNoseTouch, alt: "Momen manis saling menatap" },
+  { src: galleryBackToBack, alt: "Potret elegan bersandar" },
+];
+
 
 const WEDDING_DATE = new Date("2026-08-21T08:00:00+07:00");
 const GALLERY = [
