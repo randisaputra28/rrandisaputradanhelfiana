@@ -36,14 +36,15 @@ export const GalleryLightbox = ({ images }: Props) => {
 
   return (
     <>
-      <div className="grid grid-cols-2 md:grid-cols-12 gap-3 sm:gap-4 auto-rows-[160px] sm:auto-rows-[200px]">
+      <div className="grid grid-cols-2 md:grid-cols-12 gap-3 sm:gap-4 auto-rows-[180px] sm:auto-rows-[220px]">
         {images.map((img, i) => {
           const layouts = [
             "md:col-span-7 md:row-span-2",
             "md:col-span-5 md:row-span-1",
             "md:col-span-5 md:row-span-1",
             "md:col-span-4 md:row-span-1",
-            "md:col-span-8 md:row-span-1",
+            "md:col-span-4 md:row-span-1",
+            "md:col-span-4 md:row-span-1",
           ];
 
           return (
@@ -54,20 +55,21 @@ export const GalleryLightbox = ({ images }: Props) => {
                 setIdx(i);
                 setOpen(true);
               }}
-              className={`relative overflow-hidden rounded-2xl shadow-soft group cursor-zoom-in border border-gold/20 bg-card/60 ${layouts[i] ?? "md:col-span-4"}`}
+              className={`photo-frame group cursor-zoom-in overflow-hidden ${layouts[i] ?? "md:col-span-4"}`}
             >
               <img
                 src={img.src}
                 alt={img.alt}
                 loading={i === 0 ? "eager" : "lazy"}
+                decoding="async"
                 fetchPriority={i === 0 ? "high" : "auto"}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent opacity-80" />
+              <div className="pointer-events-none absolute inset-[6px] rounded-[0.75rem] bg-gradient-to-t from-primary/25 via-transparent to-transparent opacity-70 group-hover:opacity-40 transition-opacity z-[2]" />
             </button>
           );
         })}
       </div>
+
 
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="max-w-4xl bg-background/95 border-gold/30 p-2 md:p-4">
