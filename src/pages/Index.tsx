@@ -215,11 +215,21 @@ const Index = () => {
               <MapPin className="w-8 h-8 text-gold mx-auto mb-3 animate-float-slow" />
               <h3 className="font-serif-display text-2xl text-primary">Lokasi</h3>
               <p className="text-muted-foreground mt-2 text-sm sm:text-base">JG7Q+94J, Pasie Laweh,<br />Kec. Sungai Tarab, Kabupaten Tanah Datar,<br />Sumatera Barat 27261</p>
-              <Button asChild className="mt-5 rounded-full text-primary-foreground shadow-elegant hover:scale-105 transition-transform" style={{ background: "linear-gradient(135deg, #b88a2a, #f5d27a, #b88a2a)" }}>
+              <div className="mt-5 rounded-2xl overflow-hidden border border-gold/40 shadow-elegant">
+                <iframe
+                  title="Lokasi Pernikahan"
+                  src="https://www.google.com/maps?q=JG7Q%2B94J+Pasie+Laweh+Sungai+Tarab+Tanah+Datar&output=embed"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="w-full h-56 sm:h-64"
+                />
+              </div>
+              <Button asChild className="mt-4 rounded-full text-primary-foreground shadow-elegant hover:scale-105 transition-transform min-h-12" style={{ background: "linear-gradient(135deg, #b88a2a, #f5d27a, #b88a2a)" }}>
                 <a href="https://maps.app.goo.gl/F3jEsuCrH6HGruDZA" target="_blank" rel="noreferrer">
-                  <MapPin className="w-4 h-4 mr-2" /> Lihat Lokasi di Google Maps
+                  <MapPin className="w-4 h-4 mr-2" /> Buka di Google Maps
                 </a>
               </Button>
+
             </div>
           </div>
         </DoorReveal>
