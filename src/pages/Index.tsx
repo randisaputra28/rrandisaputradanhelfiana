@@ -12,6 +12,7 @@ import { SparkleEffect } from "@/components/wedding/SparkleEffect";
 import { DoorReveal } from "@/components/wedding/DoorReveal";
 import { Reveal } from "@/components/wedding/Reveal";
 import { LoveStory } from "@/components/wedding/LoveStory";
+import { SaveToCalendar } from "@/components/wedding/SaveToCalendar";
 import randiPhoto from "@/assets/randi.jpg";
 import helfiPhoto from "@/assets/helfi.jpeg";
 import galleryHeart from "@/assets/gallery-heart.webp";
