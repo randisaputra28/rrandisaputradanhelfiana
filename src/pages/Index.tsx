@@ -280,6 +280,7 @@ const Index = () => {
             </DoorReveal>
           ))}
         </div>
+        <SaveToCalendar />
         <DoorReveal delay={200} className="rounded-2xl mt-4">
           <div className="group relative overflow-hidden bg-card/85 backdrop-blur-md border border-gold/30 rounded-2xl p-6 sm:p-8 text-center shadow-soft hover:shadow-elegant transition-all duration-300">
             <img src={bgMarawa} alt="" aria-hidden loading="lazy" className="pointer-events-none absolute inset-y-0 left-0 h-full w-10 sm:w-14 object-cover" style={{ opacity: 0.12 }} />
