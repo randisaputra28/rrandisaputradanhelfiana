@@ -251,6 +251,11 @@
     box-shadow: 0 30px 80px -20px hsl(25 45% 18% / 0.35);
     overflow-x: hidden;
   }
+  .mobile-shell.with-ornament {
+    background:
+      linear-gradient(180deg, hsl(25 45% 14% / 0.35), hsl(25 45% 14% / 0.15) 40%, hsl(25 45% 14% / 0.45)),
+      var(--ornament-bg) center / cover no-repeat;
+  }
   @media (min-width: 640px) {
     .mobile-shell { border: 1px solid hsl(var(--gold) / 0.25); border-radius: 28px; }
   }

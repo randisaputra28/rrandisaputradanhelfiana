@@ -12,6 +12,7 @@ import { SparkleEffect } from "@/components/wedding/SparkleEffect";
 import { DoorReveal } from "@/components/wedding/DoorReveal";
 import { Reveal } from "@/components/wedding/Reveal";
 import { LoveStory } from "@/components/wedding/LoveStory";
+import { SaveToCalendar } from "@/components/wedding/SaveToCalendar";
 import randiPhoto from "@/assets/randi.jpg";
 import helfiPhoto from "@/assets/helfi.jpeg";
 import galleryHeart from "@/assets/gallery-heart.webp";
@@ -152,20 +153,22 @@ const Index = () => {
   }
 
   return (
-    <div className="mobile-shell min-h-screen relative pb-32 sm:pb-28">
+    <div
+      className="mobile-shell with-ornament min-h-screen relative pb-32 sm:pb-28"
+      style={{ ["--ornament-bg" as any]: `url(${bgOrnament})` }}
+    >
 
       <SparkleEffect />
 
       <BottomNav />
-      <div className="fixed inset-0 -z-10" style={{ backgroundImage: `url(${bgOrnament})`, backgroundSize: "cover", backgroundPosition: "center", backgroundAttachment: "fixed" }} />
-      <div className="fixed inset-0 -z-10 pointer-events-none" style={{ background: "linear-gradient(180deg, hsl(25 45% 14% / 0.35), hsl(25 45% 14% / 0.15) 40%, hsl(25 45% 14% / 0.45))" }} />
       <audio id="bg-music" loop src="/wedding-music.mp3" preload="auto" />
+
 
       <button onClick={toggleMusic} className="fixed bottom-20 right-4 z-50 bg-gold text-primary-foreground rounded-full w-11 h-11 flex items-center justify-center shadow-elegant hover:scale-110 transition-transform">
         {musicOn ? <Music2 className="w-5 h-5 animate-shimmer" /> : <Music className="w-5 h-5" />}
       </button>
 
-      <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 pt-10 pb-8">
+      <section id="hero" className="relative flex items-center justify-center overflow-hidden px-4 pt-10 pb-8 min-h-[85vh]">
         <div className="relative z-20 text-center w-full max-w-[22rem] mx-auto animate-fade-up">
           <div className="relative mx-auto rounded-[1.4rem] p-[2px]" style={{ background: "linear-gradient(135deg, #f5d27a, #8a5a15 50%, #f5d27a)" }}>
             <div className="relative rounded-[1.3rem] px-6 py-9 overflow-hidden" style={{ background: "linear-gradient(160deg, hsl(25 30% 10% / 0.68), hsl(25 30% 8% / 0.55))", backdropFilter: "blur(6px)" }}>
@@ -277,6 +280,7 @@ const Index = () => {
             </DoorReveal>
           ))}
         </div>
+        <SaveToCalendar />
         <DoorReveal delay={200} className="rounded-2xl mt-4">
           <div className="group relative overflow-hidden bg-card/85 backdrop-blur-md border border-gold/30 rounded-2xl p-6 sm:p-8 text-center shadow-soft hover:shadow-elegant transition-all duration-300">
             <img src={bgMarawa} alt="" aria-hidden loading="lazy" className="pointer-events-none absolute inset-y-0 left-0 h-full w-10 sm:w-14 object-cover" style={{ opacity: 0.12 }} />
