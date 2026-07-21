@@ -168,7 +168,7 @@ const Index = () => {
         {musicOn ? <Music2 className="w-5 h-5 animate-shimmer" /> : <Music className="w-5 h-5" />}
       </button>
 
-      <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 pt-10 pb-8">
+      <section id="hero" className="relative flex items-center justify-center overflow-hidden px-4 pt-10 pb-8 min-h-[85vh]">
         <div className="relative z-20 text-center w-full max-w-[22rem] mx-auto animate-fade-up">
           <div className="relative mx-auto rounded-[1.4rem] p-[2px]" style={{ background: "linear-gradient(135deg, #f5d27a, #8a5a15 50%, #f5d27a)" }}>
             <div className="relative rounded-[1.3rem] px-6 py-9 overflow-hidden" style={{ background: "linear-gradient(160deg, hsl(25 30% 10% / 0.68), hsl(25 30% 8% / 0.55))", backdropFilter: "blur(6px)" }}>
