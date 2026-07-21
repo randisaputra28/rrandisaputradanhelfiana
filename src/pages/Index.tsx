@@ -152,14 +152,16 @@ const Index = () => {
   }
 
   return (
-    <div className="mobile-shell min-h-screen relative pb-32 sm:pb-28">
+    <div
+      className="mobile-shell with-ornament min-h-screen relative pb-32 sm:pb-28"
+      style={{ ["--ornament-bg" as any]: `url(${bgOrnament})` }}
+    >
 
       <SparkleEffect />
 
       <BottomNav />
-      <div className="fixed inset-0 -z-10" style={{ backgroundImage: `url(${bgOrnament})`, backgroundSize: "cover", backgroundPosition: "center", backgroundAttachment: "fixed" }} />
-      <div className="fixed inset-0 -z-10 pointer-events-none" style={{ background: "linear-gradient(180deg, hsl(25 45% 14% / 0.35), hsl(25 45% 14% / 0.15) 40%, hsl(25 45% 14% / 0.45))" }} />
       <audio id="bg-music" loop src="/wedding-music.mp3" preload="auto" />
+
 
       <button onClick={toggleMusic} className="fixed bottom-20 right-4 z-50 bg-gold text-primary-foreground rounded-full w-11 h-11 flex items-center justify-center shadow-elegant hover:scale-110 transition-transform">
         {musicOn ? <Music2 className="w-5 h-5 animate-shimmer" /> : <Music className="w-5 h-5" />}
