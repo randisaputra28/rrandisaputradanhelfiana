@@ -107,30 +107,38 @@ const Index = () => {
     return (
       <div className="mobile-shell min-h-screen relative flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0" style={{ backgroundImage: `url(${bgOrnament})`, backgroundSize: "cover", backgroundPosition: "center" }} />
-        <div className="absolute inset-0 bg-[hsl(25_45%_12%/0.35)]" />
-        <div className="relative z-10 w-[88%] max-w-sm mx-auto animate-fade-up">
-          <div className="relative rounded-[1.5rem] p-[2px]" style={{ background: "linear-gradient(135deg, hsl(42 80% 78%), hsl(38 70% 40%) 45%, hsl(42 80% 78%))" }}>
-            <div className="relative rounded-[1.4rem] px-6 py-10 text-center overflow-hidden" style={{ background: "linear-gradient(160deg, hsl(36 40% 98% / 0.92), hsl(32 30% 92% / 0.88))" }}>
-              <div className="pointer-events-none absolute inset-3 rounded-[1.15rem] border border-gold/40" />
-              <div className="pointer-events-none absolute inset-[14px] rounded-[1rem] border border-gold/20" />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, hsl(25 45% 10% / 0.55), hsl(25 45% 10% / 0.35) 45%, hsl(25 45% 10% / 0.6))" }} />
+        <div className="relative z-10 w-[90%] max-w-sm mx-auto animate-fade-up">
+          <div className="relative rounded-[1.6rem] p-[2px]" style={{ background: "linear-gradient(135deg, #f5d27a, #b88a2a 40%, #f5d27a 70%, #8a5a15)" }}>
+            <div className="relative rounded-[1.5rem] px-6 py-11 text-center overflow-hidden" style={{ background: "linear-gradient(160deg, hsl(36 42% 97% / 0.96), hsl(32 30% 90% / 0.94))" }}>
+              <div className="pointer-events-none absolute inset-3 rounded-[1.25rem] border border-gold/50" />
+              <div className="pointer-events-none absolute inset-[14px] rounded-[1.1rem] border border-gold/25" />
+              <span className="pointer-events-none absolute top-3 left-3 w-5 h-5 border-t-2 border-l-2 border-gold rounded-tl-lg" />
+              <span className="pointer-events-none absolute top-3 right-3 w-5 h-5 border-t-2 border-r-2 border-gold rounded-tr-lg" />
+              <span className="pointer-events-none absolute bottom-3 left-3 w-5 h-5 border-b-2 border-l-2 border-gold rounded-bl-lg" />
+              <span className="pointer-events-none absolute bottom-3 right-3 w-5 h-5 border-b-2 border-r-2 border-gold rounded-br-lg" />
               <div className="relative z-10">
-                <div className="flex items-center justify-center gap-2 mb-4">
-                  <span className="h-px w-8 bg-gold/60" />
-                  <span className="text-[11px] uppercase tracking-[0.5em] text-gold font-semibold">The Wedding Of</span>
-                  <span className="h-px w-8 bg-gold/60" />
+                <div className="flex items-center justify-center gap-3 mb-5">
+                  <span className="h-px w-10" style={{ background: "linear-gradient(90deg, transparent, hsl(var(--gold)))" }} />
+                  <span className="text-[10px] uppercase tracking-[0.55em] text-gold font-semibold">The Wedding Of</span>
+                  <span className="h-px w-10" style={{ background: "linear-gradient(90deg, hsl(var(--gold)), transparent)" }} />
                 </div>
-                <h1 className="font-script text-6xl md:text-7xl text-primary leading-[0.9] text-4d">Randi</h1>
-                <p className="font-serif-display text-2xl italic text-gold my-1">&amp;</p>
-                <h1 className="font-script text-6xl md:text-7xl text-primary leading-[0.9] text-4d">Helfi</h1>
+                <h1 className="font-script text-[3.4rem] leading-[0.95] text-primary text-4d">Randi</h1>
+                <div className="flex items-center justify-center gap-2 my-1">
+                  <span className="h-px w-6 bg-gold/50" />
+                  <span className="font-serif-display text-xl italic text-gold">&amp;</span>
+                  <span className="h-px w-6 bg-gold/50" />
+                </div>
+                <h1 className="font-script text-[3.4rem] leading-[0.95] text-primary text-4d">Helfi</h1>
                 <div className="flex items-center justify-center gap-2 my-5">
                   <span className="h-px w-10 bg-gold/60" />
                   <Heart className="w-4 h-4 text-rose fill-rose" />
                   <span className="h-px w-10 bg-gold/60" />
                 </div>
-                <p className="font-serif-display text-sm text-primary/80">21 &middot; 22 Agustus 2026</p>
+                <p className="font-serif-display text-sm text-primary/85 tracking-wide">21 &middot; 22 Agustus 2026</p>
                 <div className="mt-7">
-                  <p className="text-[11px] uppercase tracking-[0.3em] text-muted-foreground mb-1">Kepada Yth.</p>
-                  <p className="font-serif-display text-xl text-primary font-semibold">{guestName}</p>
+                  <p className="text-[10px] uppercase tracking-[0.35em] text-muted-foreground mb-1">Kepada Yth.</p>
+                  <p className="font-serif-display text-lg text-primary font-semibold">{guestName}</p>
                 </div>
                 <Button onClick={() => setOpened(true)} size="lg" className="mt-7 text-primary-foreground rounded-full px-8 shadow-elegant min-h-12 hover:scale-105 transition-transform" style={{ background: "linear-gradient(135deg, #b88a2a, #f5d27a 50%, #b88a2a)" }}>
                   <BookOpen className="w-4 h-4 mr-2" /> Buka Undangan
@@ -159,22 +167,38 @@ const Index = () => {
 
       <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 pt-10 pb-8">
         <div className="relative z-20 text-center w-full max-w-[22rem] mx-auto animate-fade-up">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <span className="h-px w-10 bg-gold/70" />
-            <span className="text-[11px] uppercase tracking-[0.5em] text-gold font-semibold drop-shadow-[0_1px_2px_rgba(0,0,0,0.4)]">The Wedding Of</span>
-            <span className="h-px w-10 bg-gold/70" />
+          <div className="relative mx-auto rounded-[1.4rem] p-[2px]" style={{ background: "linear-gradient(135deg, #f5d27a, #8a5a15 50%, #f5d27a)" }}>
+            <div className="relative rounded-[1.3rem] px-6 py-9 overflow-hidden" style={{ background: "linear-gradient(160deg, hsl(25 30% 10% / 0.68), hsl(25 30% 8% / 0.55))", backdropFilter: "blur(6px)" }}>
+              <div className="pointer-events-none absolute inset-2.5 rounded-[1.05rem] border border-gold/40" />
+              <span className="pointer-events-none absolute top-2 left-2 w-4 h-4 border-t-2 border-l-2 border-gold/80 rounded-tl-md" />
+              <span className="pointer-events-none absolute top-2 right-2 w-4 h-4 border-t-2 border-r-2 border-gold/80 rounded-tr-md" />
+              <span className="pointer-events-none absolute bottom-2 left-2 w-4 h-4 border-b-2 border-l-2 border-gold/80 rounded-bl-md" />
+              <span className="pointer-events-none absolute bottom-2 right-2 w-4 h-4 border-b-2 border-r-2 border-gold/80 rounded-br-md" />
+              <div className="relative z-10">
+                <div className="flex items-center justify-center gap-3 mb-4">
+                  <span className="h-px w-10 bg-gold/70" />
+                  <span className="text-[10px] uppercase tracking-[0.55em] text-gold font-semibold">The Wedding Of</span>
+                  <span className="h-px w-10 bg-gold/70" />
+                </div>
+                <h1 className="font-script text-[3.6rem] sm:text-6xl leading-[0.95] text-4d" style={{ color: "hsl(42 90% 88%)" }}>Randi</h1>
+                <div className="flex items-center justify-center gap-2 my-1">
+                  <span className="h-px w-6 bg-gold/60" />
+                  <span className="font-serif-display text-xl italic text-gold">&amp;</span>
+                  <span className="h-px w-6 bg-gold/60" />
+                </div>
+                <h1 className="font-script text-[3.6rem] sm:text-6xl leading-[0.95] text-4d" style={{ color: "hsl(42 90% 88%)" }}>Helfi</h1>
+                <div className="flex items-center justify-center gap-3 my-4">
+                  <span className="h-px w-12 bg-gold/60" />
+                  <Heart className="w-4 h-4 text-rose fill-rose" />
+                  <span className="h-px w-12 bg-gold/60" />
+                </div>
+                <p className="font-serif-display text-sm sm:text-base font-medium tracking-wide" style={{ color: "hsl(36 60% 94%)" }}>Jum'at, 21 &middot; Sabtu, 22 Agustus 2026</p>
+              </div>
+            </div>
           </div>
-          <h1 className="font-script text-7xl sm:text-8xl md:text-9xl leading-[0.9] font-bold text-4d" style={{ color: "hsl(36 60% 96%)" }}>Randi</h1>
-          <p className="font-serif-display text-3xl italic text-gold my-1">&amp;</p>
-          <h1 className="font-script text-7xl sm:text-8xl md:text-9xl leading-[0.9] font-bold text-4d" style={{ color: "hsl(36 60% 96%)" }}>Helfi</h1>
-          <div className="flex items-center justify-center gap-3 my-5">
-            <span className="h-px w-12 bg-gold/70" />
-            <Heart className="w-4 h-4 text-rose fill-rose" />
-            <span className="h-px w-12 bg-gold/70" />
-          </div>
-          <p className="font-serif-display text-lg sm:text-xl font-semibold leading-snug drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]" style={{ color: "hsl(36 60% 96%)" }}>Jum'at, 21 &middot; Sabtu, 22 Agustus 2026</p>
         </div>
       </section>
+
 
       <section className="py-8 sm:py-10 px-4 sm:px-6 max-w-2xl mx-auto -mt-2 sm:-mt-4">
         <Reveal>
@@ -268,7 +292,7 @@ const Index = () => {
                   src="https://www.google.com/maps?q=JG7Q%2B94J+Pasie+Laweh+Sungai+Tarab+Tanah+Datar&output=embed"
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  className="w-full h-40 sm:h-48"
+                  className="w-full h-32 sm:h-40"
                 />
               </div>
               <Button asChild className="mt-4 rounded-full text-primary-foreground shadow-elegant hover:scale-105 transition-transform min-h-12" style={{ background: "linear-gradient(135deg, #b88a2a, #f5d27a, #b88a2a)" }}>
