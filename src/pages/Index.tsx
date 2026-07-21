@@ -107,30 +107,38 @@ const Index = () => {
     return (
       <div className="mobile-shell min-h-screen relative flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0" style={{ backgroundImage: `url(${bgOrnament})`, backgroundSize: "cover", backgroundPosition: "center" }} />
-        <div className="absolute inset-0 bg-[hsl(25_45%_12%/0.35)]" />
-        <div className="relative z-10 w-[88%] max-w-sm mx-auto animate-fade-up">
-          <div className="relative rounded-[1.5rem] p-[2px]" style={{ background: "linear-gradient(135deg, hsl(42 80% 78%), hsl(38 70% 40%) 45%, hsl(42 80% 78%))" }}>
-            <div className="relative rounded-[1.4rem] px-6 py-10 text-center overflow-hidden" style={{ background: "linear-gradient(160deg, hsl(36 40% 98% / 0.92), hsl(32 30% 92% / 0.88))" }}>
-              <div className="pointer-events-none absolute inset-3 rounded-[1.15rem] border border-gold/40" />
-              <div className="pointer-events-none absolute inset-[14px] rounded-[1rem] border border-gold/20" />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, hsl(25 45% 10% / 0.55), hsl(25 45% 10% / 0.35) 45%, hsl(25 45% 10% / 0.6))" }} />
+        <div className="relative z-10 w-[90%] max-w-sm mx-auto animate-fade-up">
+          <div className="relative rounded-[1.6rem] p-[2px]" style={{ background: "linear-gradient(135deg, #f5d27a, #b88a2a 40%, #f5d27a 70%, #8a5a15)" }}>
+            <div className="relative rounded-[1.5rem] px-6 py-11 text-center overflow-hidden" style={{ background: "linear-gradient(160deg, hsl(36 42% 97% / 0.96), hsl(32 30% 90% / 0.94))" }}>
+              <div className="pointer-events-none absolute inset-3 rounded-[1.25rem] border border-gold/50" />
+              <div className="pointer-events-none absolute inset-[14px] rounded-[1.1rem] border border-gold/25" />
+              <span className="pointer-events-none absolute top-3 left-3 w-5 h-5 border-t-2 border-l-2 border-gold rounded-tl-lg" />
+              <span className="pointer-events-none absolute top-3 right-3 w-5 h-5 border-t-2 border-r-2 border-gold rounded-tr-lg" />
+              <span className="pointer-events-none absolute bottom-3 left-3 w-5 h-5 border-b-2 border-l-2 border-gold rounded-bl-lg" />
+              <span className="pointer-events-none absolute bottom-3 right-3 w-5 h-5 border-b-2 border-r-2 border-gold rounded-br-lg" />
               <div className="relative z-10">
-                <div className="flex items-center justify-center gap-2 mb-4">
-                  <span className="h-px w-8 bg-gold/60" />
-                  <span className="text-[11px] uppercase tracking-[0.5em] text-gold font-semibold">The Wedding Of</span>
-                  <span className="h-px w-8 bg-gold/60" />
+                <div className="flex items-center justify-center gap-3 mb-5">
+                  <span className="h-px w-10" style={{ background: "linear-gradient(90deg, transparent, hsl(var(--gold)))" }} />
+                  <span className="text-[10px] uppercase tracking-[0.55em] text-gold font-semibold">The Wedding Of</span>
+                  <span className="h-px w-10" style={{ background: "linear-gradient(90deg, hsl(var(--gold)), transparent)" }} />
                 </div>
-                <h1 className="font-script text-6xl md:text-7xl text-primary leading-[0.9] text-4d">Randi</h1>
-                <p className="font-serif-display text-2xl italic text-gold my-1">&amp;</p>
-                <h1 className="font-script text-6xl md:text-7xl text-primary leading-[0.9] text-4d">Helfi</h1>
+                <h1 className="font-script text-[3.4rem] leading-[0.95] text-primary text-4d">Randi</h1>
+                <div className="flex items-center justify-center gap-2 my-1">
+                  <span className="h-px w-6 bg-gold/50" />
+                  <span className="font-serif-display text-xl italic text-gold">&amp;</span>
+                  <span className="h-px w-6 bg-gold/50" />
+                </div>
+                <h1 className="font-script text-[3.4rem] leading-[0.95] text-primary text-4d">Helfi</h1>
                 <div className="flex items-center justify-center gap-2 my-5">
                   <span className="h-px w-10 bg-gold/60" />
                   <Heart className="w-4 h-4 text-rose fill-rose" />
                   <span className="h-px w-10 bg-gold/60" />
                 </div>
-                <p className="font-serif-display text-sm text-primary/80">21 &middot; 22 Agustus 2026</p>
+                <p className="font-serif-display text-sm text-primary/85 tracking-wide">21 &middot; 22 Agustus 2026</p>
                 <div className="mt-7">
-                  <p className="text-[11px] uppercase tracking-[0.3em] text-muted-foreground mb-1">Kepada Yth.</p>
-                  <p className="font-serif-display text-xl text-primary font-semibold">{guestName}</p>
+                  <p className="text-[10px] uppercase tracking-[0.35em] text-muted-foreground mb-1">Kepada Yth.</p>
+                  <p className="font-serif-display text-lg text-primary font-semibold">{guestName}</p>
                 </div>
                 <Button onClick={() => setOpened(true)} size="lg" className="mt-7 text-primary-foreground rounded-full px-8 shadow-elegant min-h-12 hover:scale-105 transition-transform" style={{ background: "linear-gradient(135deg, #b88a2a, #f5d27a 50%, #b88a2a)" }}>
                   <BookOpen className="w-4 h-4 mr-2" /> Buka Undangan
