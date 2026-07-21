@@ -167,22 +167,38 @@ const Index = () => {
 
       <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 pt-10 pb-8">
         <div className="relative z-20 text-center w-full max-w-[22rem] mx-auto animate-fade-up">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <span className="h-px w-10 bg-gold/70" />
-            <span className="text-[11px] uppercase tracking-[0.5em] text-gold font-semibold drop-shadow-[0_1px_2px_rgba(0,0,0,0.4)]">The Wedding Of</span>
-            <span className="h-px w-10 bg-gold/70" />
+          <div className="relative mx-auto rounded-[1.4rem] p-[2px]" style={{ background: "linear-gradient(135deg, #f5d27a, #8a5a15 50%, #f5d27a)" }}>
+            <div className="relative rounded-[1.3rem] px-6 py-9 overflow-hidden" style={{ background: "linear-gradient(160deg, hsl(25 30% 10% / 0.68), hsl(25 30% 8% / 0.55))", backdropFilter: "blur(6px)" }}>
+              <div className="pointer-events-none absolute inset-2.5 rounded-[1.05rem] border border-gold/40" />
+              <span className="pointer-events-none absolute top-2 left-2 w-4 h-4 border-t-2 border-l-2 border-gold/80 rounded-tl-md" />
+              <span className="pointer-events-none absolute top-2 right-2 w-4 h-4 border-t-2 border-r-2 border-gold/80 rounded-tr-md" />
+              <span className="pointer-events-none absolute bottom-2 left-2 w-4 h-4 border-b-2 border-l-2 border-gold/80 rounded-bl-md" />
+              <span className="pointer-events-none absolute bottom-2 right-2 w-4 h-4 border-b-2 border-r-2 border-gold/80 rounded-br-md" />
+              <div className="relative z-10">
+                <div className="flex items-center justify-center gap-3 mb-4">
+                  <span className="h-px w-10 bg-gold/70" />
+                  <span className="text-[10px] uppercase tracking-[0.55em] text-gold font-semibold">The Wedding Of</span>
+                  <span className="h-px w-10 bg-gold/70" />
+                </div>
+                <h1 className="font-script text-[3.6rem] sm:text-6xl leading-[0.95] text-4d" style={{ color: "hsl(42 90% 88%)" }}>Randi</h1>
+                <div className="flex items-center justify-center gap-2 my-1">
+                  <span className="h-px w-6 bg-gold/60" />
+                  <span className="font-serif-display text-xl italic text-gold">&amp;</span>
+                  <span className="h-px w-6 bg-gold/60" />
+                </div>
+                <h1 className="font-script text-[3.6rem] sm:text-6xl leading-[0.95] text-4d" style={{ color: "hsl(42 90% 88%)" }}>Helfi</h1>
+                <div className="flex items-center justify-center gap-3 my-4">
+                  <span className="h-px w-12 bg-gold/60" />
+                  <Heart className="w-4 h-4 text-rose fill-rose" />
+                  <span className="h-px w-12 bg-gold/60" />
+                </div>
+                <p className="font-serif-display text-sm sm:text-base font-medium tracking-wide" style={{ color: "hsl(36 60% 94%)" }}>Jum'at, 21 &middot; Sabtu, 22 Agustus 2026</p>
+              </div>
+            </div>
           </div>
-          <h1 className="font-script text-7xl sm:text-8xl md:text-9xl leading-[0.9] font-bold text-4d" style={{ color: "hsl(36 60% 96%)" }}>Randi</h1>
-          <p className="font-serif-display text-3xl italic text-gold my-1">&amp;</p>
-          <h1 className="font-script text-7xl sm:text-8xl md:text-9xl leading-[0.9] font-bold text-4d" style={{ color: "hsl(36 60% 96%)" }}>Helfi</h1>
-          <div className="flex items-center justify-center gap-3 my-5">
-            <span className="h-px w-12 bg-gold/70" />
-            <Heart className="w-4 h-4 text-rose fill-rose" />
-            <span className="h-px w-12 bg-gold/70" />
-          </div>
-          <p className="font-serif-display text-lg sm:text-xl font-semibold leading-snug drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]" style={{ color: "hsl(36 60% 96%)" }}>Jum'at, 21 &middot; Sabtu, 22 Agustus 2026</p>
         </div>
       </section>
+
 
       <section className="py-8 sm:py-10 px-4 sm:px-6 max-w-2xl mx-auto -mt-2 sm:-mt-4">
         <Reveal>
