@@ -292,7 +292,7 @@ const Index = () => {
                   src="https://www.google.com/maps?q=JG7Q%2B94J+Pasie+Laweh+Sungai+Tarab+Tanah+Datar&output=embed"
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  className="w-full h-40 sm:h-48"
+                  className="w-full h-32 sm:h-40"
                 />
               </div>
               <Button asChild className="mt-4 rounded-full text-primary-foreground shadow-elegant hover:scale-105 transition-transform min-h-12" style={{ background: "linear-gradient(135deg, #b88a2a, #f5d27a, #b88a2a)" }}>
