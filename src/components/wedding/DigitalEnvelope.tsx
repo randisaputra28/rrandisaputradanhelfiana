@@ -137,13 +137,16 @@ export const DigitalEnvelope = () => {
   const [open, setOpen] = useState(false);
   return (
     <>
-      <Button
-        onClick={() => setOpen(true)}
-        variant="outline"
-        className="border-gold text-gold hover:bg-gold hover:text-primary-foreground min-h-12 px-6 rounded-full"
-      >
-        <Wallet className="w-4 h-4 mr-2" /> Kirim Hadiah
-      </Button>
+      <div className="gift-frame">
+        <Button
+          onClick={() => setOpen(true)}
+          className="rounded-full min-h-12 px-7 text-primary-foreground border-0 hover:scale-[1.03] transition-transform"
+          style={{ background: "linear-gradient(135deg, #2a1a08 0%, #4a2f10 50%, #2a1a08 100%)" }}
+        >
+          <span className="gift-emoji text-xl mr-2" aria-hidden>🎁</span>
+          <span className="font-semibold tracking-wide" style={{ color: "hsl(42 90% 82%)" }}>Kirim Hadiah</span>
+        </Button>
+      </div>
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="max-h-[90vh] overflow-y-auto sm:max-w-md">
           <DialogHeader>

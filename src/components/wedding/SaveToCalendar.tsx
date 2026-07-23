@@ -89,35 +89,43 @@ const googleCalUrl = (e: EventInfo) => {
 };
 
 export const SaveToCalendar = () => {
-  const downloadICS = () => {
+  const saveToCalendar = () => {
+    // On mobile devices, opening the .ics file adds the event directly to
+    // the native calendar app (with the built-in alarms baked into the file).
+    // On desktop, most browsers download the file which the OS opens with
+    // the default calendar. Either way it lands in the user's phone/laptop.
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
     const blob = new Blob([buildICS(EVENTS)], { type: "text/calendar;charset=utf-8" });
     const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "Randi-Helfi-Wedding.ics";
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
+
+    if (isMobile) {
+      // Direct navigation triggers the OS calendar handler on Android/iOS
+      window.location.href = url;
+      // As a graceful fallback for Android browsers that block the intent,
+      // also open the Google Calendar web flow (user is already signed in
+      // to their Google account on the phone in most cases).
+      setTimeout(() => {
+        window.open(googleCalUrl(EVENTS[0]), "_blank", "noopener");
+      }, 800);
+    } else {
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "Randi-Helfi-Wedding.ics";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
+    setTimeout(() => URL.revokeObjectURL(url), 4000);
   };
 
   return (
-    <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center items-stretch">
+    <div className="mt-6 flex justify-center">
       <Button
-        onClick={downloadICS}
-        className="rounded-full text-primary-foreground shadow-elegant hover:scale-105 transition-transform min-h-12 px-6"
+        onClick={saveToCalendar}
+        className="rounded-full text-primary-foreground shadow-elegant hover:scale-105 transition-transform min-h-12 px-7"
         style={{ background: "linear-gradient(135deg, #b88a2a, #f5d27a 50%, #b88a2a)" }}
       >
-        <CalendarPlus className="w-4 h-4 mr-2" /> Simpan ke Kalender (+ Alarm)
-      </Button>
-      <Button
-        asChild
-        variant="outline"
-        className="rounded-full border-gold/60 text-gold hover:bg-gold/10 min-h-12 px-6"
-      >
-        <a href={googleCalUrl(EVENTS[0])} target="_blank" rel="noreferrer">
-          <CalendarPlus className="w-4 h-4 mr-2" /> Google Calendar
-        </a>
+        <CalendarPlus className="w-4 h-4 mr-2" /> Simpan ke Kalender HP
       </Button>
     </div>
   );

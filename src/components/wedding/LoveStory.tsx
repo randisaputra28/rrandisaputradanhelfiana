@@ -36,8 +36,8 @@ export const LoveStory = () => {
     <section id="love-story" className="relative py-20 px-4 sm:px-6 max-w-3xl mx-auto scroll-mt-16">
       <div className="text-center mb-12 animate-fade-up">
         <p className="text-sm uppercase tracking-[0.3em] text-gold mb-2">❤️ Our Love Story</p>
-        <h2 className="font-serif-display text-4xl text-primary">Perjalanan Cinta Kami</h2>
-        <p className="mt-4 text-muted-foreground italic font-serif-display text-lg leading-relaxed">
+        <h2 className="font-serif-display text-4xl text-4d" style={{ color: "hsl(42 90% 88%)" }}>Perjalanan Cinta Kami</h2>
+        <p className="mt-4 italic font-serif-display text-lg leading-relaxed" style={{ color: "hsl(36 60% 94%)", textShadow: "0 2px 8px hsl(25 45% 8% / 0.6)" }}>
           "Perjalanan cinta yang dipertemukan oleh takdir, dipersatukan oleh waktu, dan disempurnakan dalam ikatan suci pernikahan."
         </p>
       </div>
