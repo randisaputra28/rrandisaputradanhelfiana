@@ -253,11 +253,56 @@
   }
   .mobile-shell.with-ornament {
     background:
-      linear-gradient(180deg, hsl(25 45% 14% / 0.35), hsl(25 45% 14% / 0.15) 40%, hsl(25 45% 14% / 0.45)),
+      radial-gradient(ellipse at top, hsl(38 70% 55% / 0.18), transparent 55%),
+      radial-gradient(ellipse at bottom, hsl(350 60% 45% / 0.15), transparent 55%),
+      linear-gradient(180deg, hsl(25 45% 12% / 0.55), hsl(25 45% 8% / 0.35) 40%, hsl(25 45% 10% / 0.6)),
       var(--ornament-bg) center / cover no-repeat;
+    background-attachment: scroll, scroll, scroll, fixed;
+    position: relative;
+  }
+  .mobile-shell.with-ornament::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(circle at 20% 15%, hsl(42 80% 70% / 0.14), transparent 35%),
+      radial-gradient(circle at 80% 45%, hsl(38 70% 55% / 0.12), transparent 40%),
+      radial-gradient(circle at 30% 80%, hsl(350 60% 55% / 0.12), transparent 40%);
+    animation: shimmer 6s ease-in-out infinite;
+    z-index: 0;
   }
   @media (min-width: 640px) {
     .mobile-shell { border: 1px solid hsl(var(--gold) / 0.25); border-radius: 28px; }
+  }
+
+  /* Gift button gold frame */
+  .gift-frame {
+    position: relative;
+    display: inline-block;
+    padding: 3px;
+    border-radius: 9999px;
+    background: linear-gradient(135deg, #f5d27a, #b88a2a 40%, #f5d27a 70%, #8a5a15);
+    box-shadow: 0 12px 30px -10px hsl(38 80% 40% / 0.55), 0 0 0 1px hsl(42 90% 70% / 0.35) inset;
+  }
+  .gift-frame::before {
+    content: "";
+    position: absolute;
+    inset: -6px;
+    border-radius: 9999px;
+    background: radial-gradient(circle, hsl(var(--gold) / 0.35), transparent 65%);
+    filter: blur(8px);
+    z-index: -1;
+    animation: shimmer 2.4s ease-in-out infinite;
+  }
+  @keyframes gift-bounce {
+    0%, 100% { transform: translateY(0) rotate(-6deg); }
+    50% { transform: translateY(-3px) rotate(6deg); }
+  }
+  .gift-emoji {
+    display: inline-block;
+    animation: gift-bounce 1.4s ease-in-out infinite;
+    filter: drop-shadow(0 2px 4px hsl(25 45% 8% / 0.5));
   }
 }
 
