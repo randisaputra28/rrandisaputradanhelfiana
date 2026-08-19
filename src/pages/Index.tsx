@@ -29,7 +29,7 @@ import bgMinangMap from "@/assets/bg-minang-map.png";
 import bgMarawa from "@/assets/bg-marawa.png";
 
 const bgOrnament = bgOrnamentAsset.url;
-const WEDDING_DATE = new Date("2026-08-21T08:00:00+07:00");
+const WEDDING_DATE = new Date("2026-08-22T10:00:00+07:00");
 const GALLERY = [
   { src: preBouquet.url, alt: "Potret mesra berdua dengan buket bunga" },
   { src: preWalk.url, alt: "Berjalan bergandengan tangan di hutan pinus" },
@@ -136,7 +136,7 @@ const Index = () => {
                   <Heart className="w-4 h-4 text-rose fill-rose" />
                   <span className="h-px w-10 bg-gold/60" />
                 </div>
-                <p className="font-serif-display text-sm text-primary/85 tracking-wide">21 &middot; 22 Agustus 2026</p>
+                <p className="font-serif-display text-sm text-primary/85 tracking-wide">Sabtu, 22 Agustus 2026</p>
                 <div className="mt-7">
                   <p className="text-[10px] uppercase tracking-[0.35em] text-muted-foreground mb-1">Kepada Yth.</p>
                   <p className="font-serif-display text-lg text-primary font-semibold">{guestName}</p>
