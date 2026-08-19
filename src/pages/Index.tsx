@@ -15,12 +15,12 @@ import { LoveStory } from "@/components/wedding/LoveStory";
 import { SaveToCalendar } from "@/components/wedding/SaveToCalendar";
 import randiPhoto from "@/assets/randi.jpg";
 import helfiPhoto from "@/assets/helfi.jpeg";
-import galleryHeart from "@/assets/gallery-heart.webp";
-import galleryPose from "@/assets/gallery-pose.webp";
-import galleryRing from "@/assets/gallery-ring.webp";
-import galleryNoseTouch from "@/assets/gallery-nose-touch.webp";
-import galleryBackToBack from "@/assets/gallery-back-to-back.webp";
-import galleryWhisperAsset from "@/assets/gallery-whisper.jpg.asset.json";
+import preBouquet from "@/assets/pre-0003.webp.asset.json";
+import preWalk from "@/assets/pre-0002.webp.asset.json";
+import preStairs from "@/assets/pre-0004.webp.asset.json";
+import preBubbles from "@/assets/pre-0005.webp.asset.json";
+import preDance from "@/assets/pre-0006.webp.asset.json";
+import preFlower from "@/assets/pre-0008.webp.asset.json";
 import bgOrnamentAsset from "@/assets/bg-ornament.jpg.asset.json";
 
 import bgRings from "@/assets/bg-rings.png";
@@ -31,12 +31,12 @@ import bgMarawa from "@/assets/bg-marawa.png";
 const bgOrnament = bgOrnamentAsset.url;
 const WEDDING_DATE = new Date("2026-08-21T08:00:00+07:00");
 const GALLERY = [
-  { src: galleryHeart, alt: "Momen romantis membentuk hati" },
-  { src: galleryWhisperAsset.url, alt: "Momen berbisik penuh cerita" },
-  { src: galleryPose, alt: "Potret berdua penuh senyum" },
-  { src: galleryRing, alt: "Potret cincin pertunangan" },
-  { src: galleryNoseTouch, alt: "Momen manis saling menatap" },
-  { src: galleryBackToBack, alt: "Potret elegan bersandar" },
+  { src: preBouquet.url, alt: "Potret mesra berdua dengan buket bunga" },
+  { src: preWalk.url, alt: "Berjalan bergandengan tangan di hutan pinus" },
+  { src: preStairs.url, alt: "Momen manis di tangga kayu" },
+  { src: preBubbles.url, alt: "Duduk berdua di antara gelembung sabun" },
+  { src: preDance.url, alt: "Menari berdua di padang rumput" },
+  { src: preFlower.url, alt: "Mengangkat bunga sakura bersama" },
 ];
 
 const LongTextPop = ({ text, className = "" }: { text: string; className?: string }) => {
