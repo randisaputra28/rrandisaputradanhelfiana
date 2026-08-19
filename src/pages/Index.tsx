@@ -195,7 +195,7 @@ const Index = () => {
                   <Heart className="w-4 h-4 text-rose fill-rose" />
                   <span className="h-px w-12 bg-gold/60" />
                 </div>
-                <p className="font-serif-display text-sm sm:text-base font-medium tracking-wide" style={{ color: "hsl(36 60% 94%)" }}>Jum'at, 21 &middot; Sabtu, 22 Agustus 2026</p>
+                <p className="font-serif-display text-sm sm:text-base font-medium tracking-wide" style={{ color: "hsl(36 60% 94%)" }}>Sabtu, 22 Agustus 2026</p>
               </div>
             </div>
           </div>
