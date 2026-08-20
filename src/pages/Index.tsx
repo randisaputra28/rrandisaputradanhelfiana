@@ -20,7 +20,7 @@ import preWalk from "@/assets/pre-0002.webp.asset.json";
 import preStairs from "@/assets/pre-0004.webp.asset.json";
 import preBubbles from "@/assets/pre-0005.webp.asset.json";
 import preDance from "@/assets/pre-0006.webp.asset.json";
-import preFlower from "@/assets/pre-0008.webp.asset.json";
+import preFlower from "@/assets/pre-0091.webp.asset.json";
 import bgOrnamentAsset from "@/assets/bg-ornament.jpg.asset.json";
 
 import bgRings from "@/assets/bg-rings.png";
@@ -36,7 +36,7 @@ const GALLERY = [
   { src: preStairs.url, alt: "Momen manis di tangga kayu" },
   { src: preBubbles.url, alt: "Duduk berdua di antara gelembung sabun" },
   { src: preDance.url, alt: "Menari berdua di padang rumput" },
-  { src: preFlower.url, alt: "Mengangkat bunga sakura bersama" },
+  { src: preFlower.url, alt: "Berdua di gazebo kayu dengan buket bunga sakura" },
 ];
 
 const LongTextPop = ({ text, className = "" }: { text: string; className?: string }) => {
